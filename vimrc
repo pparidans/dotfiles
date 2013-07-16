@@ -62,7 +62,7 @@ endif
 " gorgeous light/dark color theme
 colorscheme solarized
 " show long lines
-set colorcolumn=+1
+"set colorcolumn=+1
 " highlight the current line
 set cursorline
 " show lines number
