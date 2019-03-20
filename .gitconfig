@@ -1,0 +1,23 @@
+[user]
+    name = Pierre Paridans
+    email = pierre@paridans.org
+[core]
+    editor = vim
+[color]
+    ui = auto
+[alias]
+    aa = add --all
+    ap = add --patch
+    amend = commit --amend
+    br = branch -v
+    bra = branch -va
+    ci = commit --verbose
+    co = checkout
+    di = diff -w
+    dic = diff -w --cached
+    fa = fetch --all
+    lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+    rt = remote -v
+    st = status -u
+    h = show
+
