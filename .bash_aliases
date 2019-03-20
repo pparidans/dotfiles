@@ -9,6 +9,8 @@ if [ -x "$(command -v xsel)" ]; then
     alias pbpaste='xsel --clipboard --output'
 fi
 
+alias git-gone="git branch -vv | awk '/: gone]/{print $1}'"
+
 #
 # Odoo configuration & aliases
 #
