@@ -2,3 +2,6 @@
 
 ## Setup
 
+```bash
+ln -sr .bash_aliases ~/
+```
