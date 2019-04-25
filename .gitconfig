@@ -8,7 +8,7 @@
 [alias]
     aa = add --all
     ap = add --patch
-    amend = commit --amend
+    amend = commit --amend --verbose
     br = branch -v
     bra = branch -va
     ci = commit --verbose
