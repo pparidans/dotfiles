@@ -19,3 +19,6 @@
 [submodule "lib/bash-git-prompt"]
 	path = lib/bash-git-prompt
 	url = https://github.com/magicmonty/bash-git-prompt.git
+[submodule ".vim/pack/user/start/yats"]
+	path = .vim/pack/user/start/yats
+	url = https://github.com/HerringtonDarkholme/yats.vim
