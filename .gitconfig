@@ -13,6 +13,7 @@
     bra = branch -va
     ci = commit --verbose
     co = checkout
+    cp = cherry-pick
     di = diff -w
     dic = diff -w --cached
     fa = fetch --all
