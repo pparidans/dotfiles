@@ -17,6 +17,7 @@
     di = diff -w
     dic = diff -w --cached
     fa = fetch --all
+    fap = fetch --all --prune
     lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
     rt = remote -v
     st = status -u
