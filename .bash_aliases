@@ -1,4 +1,4 @@
-# Create screen session or reattach existing one
+# Create screen session or reattach existing one (apt install screen)
 if [ -x "$(command -v screen)" ]; then
     alias sr="screen -d -R"
 fi
@@ -10,6 +10,7 @@ if [ -x "$(command -v xsel)" ]; then
 fi
 
 alias git-gone="git branch -vv | awk '/: gone]/{print $1}'"
+alias git-gone-clean="git-gone | cut -d\" \" -f3 | xargs git br -D"
 
 #
 # Odoo configuration & aliases
