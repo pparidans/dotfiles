@@ -16,9 +16,6 @@
 [submodule ".vim/pack/user/start/vim-fugitive"]
 	path = .vim/pack/user/start/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
-[submodule "lib/bash-git-prompt"]
-	path = lib/bash-git-prompt
-	url = https://github.com/magicmonty/bash-git-prompt.git
 [submodule ".vim/pack/user/start/yats"]
 	path = .vim/pack/user/start/yats
 	url = https://github.com/HerringtonDarkholme/yats.vim

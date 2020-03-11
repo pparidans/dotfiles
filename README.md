@@ -2,28 +2,16 @@
 
 ## Setup
 
-```bash
-sudo apt install -y vim ack git curl xsel screen ruby
+```sh
+sudo apt install -y vim ack git curl xsel tig ruby build-essential htop zsh
 ```
 
-```bash
+```sh
 ln -sr .ackrc ~/
-ln -sr .bash_aliases ~/
+ln -sr .oh-my-zsh/plugins/odoo ~/.oh-my-zsh/plugins/
+ln -sr .oh-my-zsh/plugins/nodenv ~/.oh-my-zsh/plugins/
+ln -sr .oh-my-zsh/plugins/clipboard ~/.oh-my-zsh/plugins/
 ln -sr .gitconfig ~/
 ln -sr .vimrc ~/
 ln -sr .vim ~/
-```
-
-Add to `.bashrc`:
-
-```bash
-echo -e "\n#\n# Personal config\n#\n. `pwd`/.bashrc" >> ~/.bashrc
-
-```
-
-or add to `.bash_profile`:
-
-```bash
-echo -e "\n#\n# Personal config\n#\n. `pwd`/.bashrc" >> ~/.bash_profile
-
 ```

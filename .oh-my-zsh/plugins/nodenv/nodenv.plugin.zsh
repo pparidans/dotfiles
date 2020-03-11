@@ -43,7 +43,7 @@ if [[ $FOUND_NODENV -eq 1 ]]; then
     }
 
     function nodenv_prompt_info() {
-		echo "$(current_ruby)"
+		echo "$(current_node)"
     }
 else
     alias nodes="node -v"

@@ -1,27 +1,11 @@
-# Create screen session or reattach existing one (apt install screen)
-if [ -x "$(command -v screen)" ]; then
-    alias sr="screen -d -R"
-fi
+# This plugin adds utility functions & aliases to start Odoo server using
+# VirtualenvWrapper and Git
 
-# Copy/Pasting from command-line (apt install xsel)
-if [ -x "$(command -v xsel)" ]; then
-    alias pbcopy='xsel --clipboard --input'
-    alias pbpaste='xsel --clipboard --output'
-fi
-
-alias git-gone="git branch -vv | awk '/: gone]/{print $1}'"
-alias git-gone-clean="git-gone | cut -d\" \" -f3 | xargs git br -D"
-
-#
-# Odoo configuration & aliases
-#
-
-function git-current-branch() {
-    git rev-parse --abbrev-ref HEAD
-}
+alias obranch-gone="git branch -vv | awk '/: gone]/{print $1}'"
+alias obranch-gone-clean="git-gone | cut -d\" \" -f3 | xargs git br -D"
 
 function odev-db() {
-    echo "odoodb-`git-current-branch`"
+    echo "odoodb-`git rev-parse --abbrev-ref HEAD`"
 }
 
 function otest-db() {

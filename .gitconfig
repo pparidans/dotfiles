@@ -5,21 +5,3 @@
     editor = vim
 [color]
     ui = auto
-[alias]
-    aa = add --all
-    ap = add --patch
-    amend = commit --amend --verbose
-    br = branch -v
-    bra = branch -va
-    ci = commit --verbose
-    co = checkout
-    cp = cherry-pick
-    di = diff -w
-    dic = diff -w --cached
-    fa = fetch --all
-    fap = fetch --all --prune
-    lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
-    rt = remote -v
-    st = status -u
-    h = show
-
