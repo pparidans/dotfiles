@@ -33,6 +33,7 @@ Enable the oh-my-zsh plugins `virtualenvwrapper`, `git`, `odoo` in `~/.zshrc` an
 ```sh
 mkvirtualenv -p $(which python3) odoo-venv
 pip install -r requirements.txt
+pip install inotify websocket-client
 ```
 
 ## Setup Postgresql
