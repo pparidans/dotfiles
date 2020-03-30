@@ -3,7 +3,7 @@
 ## Setup
 
 ```sh
-sudo apt install -y vim ack git curl xsel tig ruby build-essential htop zsh
+sudo apt install -y vim ack git curl xsel tig ruby build-essential htop zsh neofetch
 ```
 
 ```sh
