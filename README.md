@@ -16,6 +16,19 @@ ln -sr .vimrc ~/
 ln -sr .vim ~/
 ```
 
+## Setup Postgresql
+
+```sh
+sudo apt install -y postgresql postgresql-server-dev-all
+```
+
+```sh
+sudo su postgres
+createuser -s $SUDO_USER
+exit
+createdb $USER
+```
+
 ## Setup Odoo environment
 
 ```sh
@@ -32,19 +45,7 @@ Enable the oh-my-zsh plugins `virtualenvwrapper`, `git`, `odoo` in `~/.zshrc` an
 
 ```sh
 mkvirtualenv -p $(which python3) odoo-venv
+workon odoo-venv
 pip install -r requirements.txt
 pip install inotify websocket-client pudb
-```
-
-## Setup Postgresql
-
-```sh
-sudo apt install -y postgresql postgresql-server-dev-all
-```
-
-```sh
-sudo su postgres
-createuser -s $SUDO_USER
-exit
-createdb $USER
 ```
