@@ -32,7 +32,7 @@ createdb $USER
 ## Setup Odoo environment
 
 ```sh
-sudo apt install -y python3 python3-dev python3-pip libsasl2-dev libldap2-dev
+sudo apt install -y python3 python3-dev python3-pip libsasl2-dev libldap2-dev libxml2-dev libxslt1-dev
 ```
 
 ```sh
