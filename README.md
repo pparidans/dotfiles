@@ -23,9 +23,7 @@ sudo apt install -y postgresql postgresql-server-dev-all
 ```
 
 ```sh
-sudo su postgres
-createuser -s $SUDO_USER
-exit
+sudo -u postgres createuser -s $USER
 createdb $USER
 ```
 
