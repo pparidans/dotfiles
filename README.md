@@ -30,7 +30,7 @@ createdb $USER
 ## Setup Odoo environment
 
 ```sh
-sudo apt install -y python3 python3-dev python3-pip libsasl2-dev libldap2-dev libxml2-dev libxslt1-dev libjpeg-dev
+sudo apt install -y python3 python3-dev python3-pip wkhtmltopdf libsasl2-dev libldap2-dev libxml2-dev libxslt1-dev libjpeg-dev
 ```
 
 ```sh
@@ -45,5 +45,5 @@ Enable the oh-my-zsh plugins `virtualenvwrapper`, `git`, `odoo` in `~/.zshrc` an
 mkvirtualenv -p $(which python3) odoo-venv
 workon odoo-venv
 pip install -r requirements.txt
-pip install inotify websocket-client pudb
+pip install watchdog websocket-client pudb
 ```
