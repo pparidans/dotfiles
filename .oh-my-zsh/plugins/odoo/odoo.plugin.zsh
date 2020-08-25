@@ -2,7 +2,7 @@
 # VirtualenvWrapper and Git
 
 alias obranch-gone="git branch -vv | awk '/: gone]/{print $1}'"
-alias obranch-gone-clean="git-gone | cut -d\" \" -f3 | xargs git br -D"
+alias obranch-gone-clean="obranch-gone | cut -d\" \" -f3 | xargs git branch -D"
 
 function odev-db() {
     echo "odoodb-`git rev-parse --abbrev-ref HEAD`"
