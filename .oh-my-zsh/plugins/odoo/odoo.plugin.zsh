@@ -17,6 +17,11 @@ function orun() {
     ./odoo-bin -d `odev-db` "$@"
 }
 
+function ofresh() {
+    oclean
+    orun "$@"
+}
+
 function oshell() {
     workon odoo-venv
     ./odoo-bin shell -d `odev-db` "$@"
@@ -41,6 +46,7 @@ function oclean-all() {
 }
 
 alias orun-ent="orun --addons-path=addons,../enterprise"
+alias ofresh-ent="ofresh --addons-path=addons,../enterprise"
 alias odev="orun --dev all"
 alias odev-ent="orun-ent --dev all"
 alias otest-ent="otest --addons-path=addons,../enterprise"
