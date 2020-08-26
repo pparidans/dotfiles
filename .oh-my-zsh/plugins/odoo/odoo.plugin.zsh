@@ -17,33 +17,13 @@ function orun() {
     ./odoo-bin -d `odev-db` "$@"
 }
 
-function orun9() {
-    workon odoo10-venv
-    ./odoo.py -d `odev-db` "$@"
-}
-
-function orun10() {
-    workon odoo10-venv
-    ./odoo-bin -d `odev-db` "$@"
-}
-
 function oshell() {
     workon odoo-venv
     ./odoo-bin shell -d `odev-db` "$@"
 }
 
-function oshell10() {
-    workon odoo10-venv
-    ./odoo-bin shell -d `odev-db` "$@"
-}
-
 function otest() {
     workon odoo-venv
-    ./odoo-bin -d `otest-db` --test-enable "$@"
-}
-
-function otest10() {
-    workon odoo10-venv
     ./odoo-bin -d `otest-db` --test-enable "$@"
 }
 
@@ -61,11 +41,6 @@ function oclean-all() {
 }
 
 alias orun-ent="orun --addons-path=addons,../enterprise"
-alias orun9-ent="orun9 --addons-path=addons,../enterprise"
-alias orun10-ent="orun10 --addons-path=addons,../enterprise"
 alias odev="orun --dev all"
-alias odev10="orun10 --dev all"
 alias odev-ent="orun-ent --dev all"
-alias odev10-ent="orun10-ent --dev all"
 alias otest-ent="otest --addons-path=addons,../enterprise"
-alias otest10-ent="otest10 --addons-path=addons,../enterprise"
