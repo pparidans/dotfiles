@@ -1,24 +1,45 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
 #
-## Fetch sub modules
+# Fetch sub modules
 #
 git submodule init
 git submodule update
 
 #
-## Install base utilities
+# Setup ZSH
 #
-sudo apt install -y vim git curl xsel tig ruby build-essential htop zsh neofetch
-# sudo apt install -y ack
+sudo apt install -y zsh curl git
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 #
-## Symlinks config files/directories
+# Install base utilities
 #
+sudo apt install -y curl build-essential htop neofetch
+
+#
+# ACK
+#
+# sudo apt install -y ack
 # ln -sr .ackrc $HOME/
-ln -sr .oh-my-zsh/plugins/odoo $HOME/.oh-my-zsh/plugins/
-# ln -sr .oh-my-zsh/plugins/nodenv $HOME/.oh-my-zsh/plugins/
+
+#
+# PBCopy/Paste
+#
+sudo apt install -y xsel
 ln -sr .oh-my-zsh/plugins/pasteboard $HOME/.oh-my-zsh/plugins/
+echo "\nplugins+=pasteboard" >> $HOME/.zshrc
+echo "\nsource \$ZSH/oh-my-zsh.sh" >> $HOME/.zshrc
+
+#
+# Git
+#
+sudo apt install -y git tig
 ln -sr .gitconfig $HOME/
+
+#
+# VIM
+#
+sudo apt install -y vim ruby
 ln -sr .vimrc $HOME/
 ln -sr .vim $HOME/
