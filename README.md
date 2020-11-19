@@ -3,11 +3,10 @@
 ## Setup
 
 ```sh
-sudo apt install -y vim ack git curl xsel tig ruby build-essential htop zsh neofetch
+sudo apt install -y vim git curl xsel tig ruby build-essential htop zsh neofetch
 ```
 
 ```sh
-ln -sr .ackrc ~/
 ln -sr .oh-my-zsh/plugins/* ~/.oh-my-zsh/custom/plugins/
 ln -sr .gitconfig ~/
 ln -sr .vimrc ~/
