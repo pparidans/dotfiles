@@ -41,6 +41,7 @@ Enable the oh-my-zsh plugins `virtualenvwrapper`, `git`, `odoo` in `~/.zshrc` an
 ```sh
 mkvirtualenv -p $(which python3) odoo-venv
 workon odoo-venv
+pip install --upgrade pip
 pip install -r requirements.txt
-pip install watchdog websocket-client pudb
+pip install inotify websocket-client pudb
 ```
