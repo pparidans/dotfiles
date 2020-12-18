@@ -50,3 +50,5 @@ alias ofresh-ent="ofresh --addons-path=addons,../enterprise"
 alias odev="orun --dev all"
 alias odev-ent="orun-ent --dev all"
 alias otest-ent="otest --addons-path=addons,../enterprise"
+alias oshell-ent="oshell --addons-path=addons,../enterprise"
+
