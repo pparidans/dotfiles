@@ -11,6 +11,7 @@ ln -sr .oh-my-zsh/plugins/* ~/.oh-my-zsh/custom/plugins/
 ln -sr .gitconfig ~/
 ln -sr .vimrc ~/
 ln -sr .vim ~/
+ln -sr .vscode ~/
 ```
 
 ## Setup Postgresql
