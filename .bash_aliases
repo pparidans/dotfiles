@@ -95,32 +95,25 @@ else
 fi
 
 #
-# enable VirtualEnvWrapper
-#
-if [ ! -f '/usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh' ]; then
-    echo "Couldn't enable VirtualEnvWrapper ; install it first."
-else
-    source /usr/share/virtualenvwrapper/virtualenvwrapper_lazy.sh
-fi
-
-#
 # enable Odoo helpers
 #
 if ! command_exists git_current_branch; then
     echo "Couldn't enable Odoo helpers ; Git is required."
 elif ! command_exists psql; then
     echo "Couldn't enable Odoo helpers ; PostgreSQL is required."
-elif ! command_exists python && ! command_exists python3; then
-    echo "Couldn't enable Odoo helpers ; Python is required."
-elif ! command_exists workon; then
-    echo "Couldn't enable Odoo helpers ; VirtualEnvWrapper is required."
+elif ! command_exists python3; then
+    echo "Couldn't enable Odoo helpers ; Python 3 is required."
 else
-    ODOO_VIRTUALENV=odoo-venv
+    ODOO_VIRTUALENV_PATH=.venv
     ODOO_ENTERPRISE_ADDONS=addons,../enterprise
 
-    if [ -z $(lsvirtualenv | grep $ODOO_VIRTUALENV) ]; then
-        echo "Odoo VirtualEnv doesn't exist ; 'mkvirtualenv odoo-venv' to create it."
-    fi
+    function activate-venv() {
+        if [ ! -f $ODOO_VIRTUALENV_PATH/bin/activate ]; then
+            echo "Odoo VirtualEnv doesn't exist ; 'python3 -m venv --prompt odoo-venv .venv' to create it."
+        elif ! [[ $VIRTUAL_ENV =~ odoo/$ODOO_VIRTUALENV_PATH$ ]]; then
+            source $ODOO_VIRTUALENV_PATH/bin/activate
+        fi
+    }
 
     function _odoo_db_name() {
         echo "odoodb-$(git_current_branch)"
@@ -147,7 +140,7 @@ else
     }
 
     function orun() {
-        workon $ODOO_VIRTUALENV
+        activate-venv
         ./odoo-bin -d `odev-db` "$@"
     }
 
@@ -157,14 +150,14 @@ else
     alias odev-ent="odev --addons-path=$ODOO_ENTERPRISE_ADDONS"
 
     function otest() {
-        workon $ODOO_VIRTUALENV
+        activate-venv
         ./odoo-bin -d `otest-db` --test-enable "$@"
     }
 
     alias otest-ent="otest --addons-path=$ODOO_ENTERPRISE_ADDONS"
 
     function oshell() {
-        workon $ODOO_VIRTUALENV
+        activate-venv
         ./odoo-bin shell -d `odev-db` "$@"
     }
 
