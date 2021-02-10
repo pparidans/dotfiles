@@ -26,6 +26,9 @@ bind 'set menu-complete-display-prefix on'
 bind '"\e[A":history-search-backward'
 bind '"\e[B":history-search-forward'
 
+alias ll="ls -l"
+alias la="ls -la"
+
 #
 # enable Git
 #
