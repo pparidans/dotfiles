@@ -7,7 +7,6 @@ sudo apt install -y vim git curl xsel tig ruby build-essential htop neofetch
 ```
 
 ```sh
-ln -sr .inputrc ~/
 ln -sr .bash_aliases ~/
 ln -sr .gitconfig ~/
 ln -sr .vimrc ~/
