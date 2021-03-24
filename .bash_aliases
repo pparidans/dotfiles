@@ -3,6 +3,15 @@ function command_exists() {
     command -v $1 &> /dev/null
 }
 
+
+#
+# Shell config
+#
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$PATH:$HOME/.local/bin"
+fi
+
+
 #
 # Bash config
 #

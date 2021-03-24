@@ -32,3 +32,13 @@ activate-venv
 pip install --upgrade pip
 pip install -r requirements.txt inotify websocket-client pudb
 ```
+
+## Setup Youtube-dl
+
+```sh
+sudo apt install atomicparsley ffmpeg
+pip install --user youtube-dl
+
+mkdir -p ~/.config/youtube-dl
+ln -sr .youtube-dl-config ~/.config/youtube-dl/config
+```
