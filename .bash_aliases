@@ -116,13 +116,22 @@ elif ! command_exists psql; then
 elif ! command_exists python3; then
     echo "Couldn't enable Odoo helpers ; Python 3 is required."
 else
-    ODOO_VIRTUALENV_PATH=.venv
+    ODOO_VIRTUALENV_PATH="$HOME/.venv/odoo-venv"
     ODOO_ENTERPRISE_ADDONS=addons,../enterprise
 
-    function activate-venv() {
+    function create-odoo-venv() {
+        if [ ! -d $ODOO_VIRTUALENV_PATH ]; then
+            mkdir -p $ODOO_VIRTUALENV_PATH
+        fi
+        python3 -m venv --prompt odoo-venv $ODOO_VIRTUALENV_PATH
+    }
+
+    function activate-odoo-venv() {
         if [ ! -f $ODOO_VIRTUALENV_PATH/bin/activate ]; then
-            echo "Odoo VirtualEnv doesn't exist ; 'python3 -m venv --prompt odoo-venv .venv' to create it."
-        elif ! [[ $VIRTUAL_ENV =~ odoo/$ODOO_VIRTUALENV_PATH$ ]]; then
+            echo "Odoo VirtualEnv doesn't exist ; creating it"
+            create-odoo-venv
+        fi
+        if ! [[ $VIRTUAL_ENV =~ $ODOO_VIRTUALENV_PATH$ ]]; then
             source $ODOO_VIRTUALENV_PATH/bin/activate
         fi
     }
@@ -152,7 +161,7 @@ else
     }
 
     function orun() {
-        activate-venv
+        activate-odoo-venv
         ./odoo-bin -d `odev-db` "$@"
     }
 
@@ -162,14 +171,14 @@ else
     alias odev-ent="odev --addons-path=$ODOO_ENTERPRISE_ADDONS"
 
     function otest() {
-        activate-venv
+        activate-odoo-venv
         ./odoo-bin -d `otest-db` --test-enable "$@"
     }
 
     alias otest-ent="otest --addons-path=$ODOO_ENTERPRISE_ADDONS"
 
     function oshell() {
-        activate-venv
+        activate-odoo-venv
         ./odoo-bin shell -d `odev-db` "$@"
     }
 
