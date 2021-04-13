@@ -23,6 +23,7 @@ bind 'set completion-ignore-case on'
 
 # If there are multiple matches for completion, Tab should cycle through them
 bind '"\t":menu-complete'
+bind '"\e[Z": menu-complete-backward'
 
 # Display a list of the matching files
 bind 'set show-all-if-ambiguous on'
