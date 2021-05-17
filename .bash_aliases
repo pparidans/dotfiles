@@ -168,7 +168,7 @@ else
 
     alias orun-ent="orun --addons-path=$ODOO_ENTERPRISE_ADDONS"
 
-    alias odev="orun --dev all"
+    alias odev="orun --dev qweb,xml,reload"
     alias odev-ent="odev --addons-path=$ODOO_ENTERPRISE_ADDONS"
 
     function otest() {
