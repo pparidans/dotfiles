@@ -45,3 +45,10 @@ pip install --user youtube-dl
 mkdir -p ~/.config/youtube-dl
 ln -sr .youtube-dl-config ~/.config/youtube-dl/config
 ```
+
+## Setup Gnome
+
+```sh
+sudo apt remove -y --auto-remove --purge gnome-games
+sudo apt install -y gnome-sushi gnome-mpv
+```
