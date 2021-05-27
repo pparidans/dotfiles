@@ -1,8 +1,8 @@
 [submodule "lib/selecta"]
 	path = lib/selecta
 	url = https://github.com/garybernhardt/selecta
-[submodule ".vim/pack/user/start/vim-dracula"]
-	path = .vim/pack/user/start/vim-dracula
+[submodule ".vim/pack/user/opt/vim-dracula"]
+	path = .vim/pack/user/opt/vim-dracula
 	url = https://github.com/dracula/vim.git
 [submodule ".vim/pack/user/start/vim-better-whitespace"]
 	path = .vim/pack/user/start/vim-better-whitespace

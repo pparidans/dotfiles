@@ -68,7 +68,7 @@ set nojoinspaces
 set autoread
 
 set background=dark
-color dracula
+packadd! vim-dracula | colorscheme dracula
 
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
