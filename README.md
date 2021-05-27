@@ -52,3 +52,32 @@ ln -sr .youtube-dl-config ~/.config/youtube-dl/config
 sudo apt remove -y --auto-remove --purge gnome-games
 sudo apt install -y gnome-sushi gnome-mpv
 ```
+
+# Firefox (Flatpak)
+
+## Fonts issue
+
+See https://bugzilla.mozilla.org/show_bug.cgi?id=1621915
+
+```sh
+sudo flatpak install flathub org.mozilla.firefox
+
+mkdir -p ~/.var/app/org.mozilla.firefox/config/fontconfig/
+
+cat > ~/.var/app/org.mozilla.firefox/config/fontconfig/fonts.conf << EOF
+<?xml version='1.0'?>
+<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
+<fontconfig>
+    <!-- Disable bitmap fonts. -->
+    <selectfont><rejectfont><pattern>
+        <patelt name="scalable"><bool>false</bool></patelt>
+    </pattern></rejectfont></selectfont>
+</fontconfig>
+EOF
+```
+
+## GPU accelerated decoding
+
+```sh
+sudo flatpak install flathub org.freedesktop.Platform.ffmpeg-full
+```
