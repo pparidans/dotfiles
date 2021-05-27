@@ -3,7 +3,7 @@
 ## Setup
 
 ```sh
-sudo apt install -y vim git curl xsel tig ruby build-essential htop neofetch
+sudo apt install -y vim git curl xsel tig ruby build-essential htop neofetch rsync
 ```
 
 ```sh
@@ -39,7 +39,7 @@ pip install -r requirements.txt inotify websocket-client pudb
 ## Setup Youtube-dl
 
 ```sh
-sudo apt install atomicparsley ffmpeg
+sudo apt install -y atomicparsley ffmpeg
 pip install --user youtube-dl
 
 mkdir -p ~/.config/youtube-dl
