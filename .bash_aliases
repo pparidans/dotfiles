@@ -8,7 +8,7 @@ function command_exists() {
 # Shell config
 #
 if [ -d "$HOME/.local/bin" ]; then
-    PATH="$PATH:$HOME/.local/bin"
+    PATH="$HOME/.local/bin:$PATH"
 fi
 
 
