@@ -86,6 +86,15 @@ else
     alias gst='git status'
     __git_complete gst _git_status
 
+    function grbh() {
+        if [ -z $1 ]; then
+            echo "Remote name is empty. Please provide one."
+        else
+            git reset $1/$(git_current_branch) --hard
+        fi
+    }
+    __git_complete grbh _git_reset
+
     # Configure `__git_ps1`
     export GIT_PS1_SHOWDIRTYSTATE=1
     export GIT_PS1_SHOWUNTRACKEDFILES=1
