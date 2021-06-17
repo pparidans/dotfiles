@@ -42,8 +42,7 @@ pip install -r requirements.txt inotify websocket-client pudb
 sudo apt install -y atomicparsley ffmpeg
 pip install --user youtube-dl
 
-mkdir -p ~/.config/youtube-dl
-ln -sr .youtube-dl-config ~/.config/youtube-dl/config
+ln -sr config/youtube-dl ~/.config/
 ```
 
 ## Setup Gnome
