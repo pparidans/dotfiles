@@ -45,6 +45,14 @@ pip install --user youtube-dl
 ln -sr config/youtube-dl ~/.config/
 ```
 
+## Setup Kitty (terminal)
+
+```sh
+sudo apt install -y kitty
+
+ln -sr config/kitty ~/.config/
+```
+
 ## Setup Gnome
 
 ```sh
