@@ -60,6 +60,23 @@ sudo apt remove -y --auto-remove --purge gnome-games
 sudo apt install -y gnome-sushi gnome-mpv
 ```
 
+## Setup VSCode
+
+Install Visual Studio Code through either `.deb` or `snap` package.
+
+```sh
+mkdir -p ~/.config/Code
+ln -sr config/Code/User ~/.config/Code/
+
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension eamodio.gitlens
+code --install-extension ms-python.python
+code --install-extension redhat.vscode-xml
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension rust-lang.rust
+code --install-extension be5invis.toml
+```
+
 # Firefox (Flatpak)
 
 ## Fonts issue
