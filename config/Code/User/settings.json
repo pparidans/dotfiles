@@ -4,5 +4,6 @@
     },
     "python.showStartPage": false,
     "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false
+    "telemetry.enableCrashReporter": false,
+    "redhat.telemetry.enabled": false
 }
