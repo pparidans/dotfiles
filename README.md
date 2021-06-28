@@ -75,6 +75,7 @@ code --install-extension redhat.vscode-xml
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension rust-lang.rust
 code --install-extension be5invis.toml
+code --install-extension esbenp.prettier-vscode
 ```
 
 # Firefox (Flatpak)
