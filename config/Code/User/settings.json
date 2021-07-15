@@ -5,5 +5,8 @@
     "python.showStartPage": false,
     "telemetry.enableTelemetry": false,
     "telemetry.enableCrashReporter": false,
-    "redhat.telemetry.enabled": false
+    "redhat.telemetry.enabled": false,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
