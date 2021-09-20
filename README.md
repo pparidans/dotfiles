@@ -7,9 +7,9 @@ sudo apt install -y vim-nox git curl xsel tig ruby build-essential htop neofetch
 ```
 
 ```sh
-ln -sr .bash_aliases ~/
-ln -sr .gitconfig ~/
-ln -sr .vim* ~/
+ln -s `pwd`/.bash_aliases $HOME/
+ln -s `pwd`/.gitconfig $HOME/
+ln -s `pwd`/.vim* $HOME/
 
 ```
 
