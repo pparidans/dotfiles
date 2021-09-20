@@ -3,15 +3,14 @@
 ## Setup
 
 ```sh
-sudo apt install -y vim git curl xsel tig ruby build-essential htop neofetch rsync
+sudo apt install -y vim-nox git curl xsel tig ruby build-essential htop neofetch rsync
 ```
 
 ```sh
 ln -sr .bash_aliases ~/
 ln -sr .gitconfig ~/
-ln -sr .vimrc ~/
-ln -sr .vim ~/
-ln -sr .vscode ~/
+ln -sr .vim* ~/
+
 ```
 
 ## Setup Postgresql
@@ -72,7 +71,6 @@ code --install-extension dbaeumer.vscode-eslint
 code --install-extension eamodio.gitlens
 code --install-extension ms-python.python
 code --install-extension redhat.vscode-xml
-code --install-extension dbaeumer.vscode-eslint
 code --install-extension rust-lang.rust
 code --install-extension be5invis.toml
 code --install-extension esbenp.prettier-vscode
