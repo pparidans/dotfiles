@@ -32,7 +32,7 @@ Ensure the config has been reloaded (open a new terminal if needed):
 ```sh
 activate-odoo-venv
 pip install --upgrade pip wheel
-pip install -r requirements.txt inotify websocket-client pudb
+pip install -r requirements.txt inotify websocket-client
 ```
 
 ## Setup Youtube-dl
