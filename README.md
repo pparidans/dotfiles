@@ -3,7 +3,7 @@
 ## Setup
 
 ```sh
-sudo apt install -y vim-nox git curl xsel tig ruby build-essential htop neofetch rsync
+sudo apt install -y vim-nox git curl xsel tig fzf build-essential htop neofetch rsync
 ```
 
 ```sh
