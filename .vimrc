@@ -66,6 +66,26 @@ set nofoldenable
 set nojoinspaces
 " If a file is changed outside of vim, automatically reload it without asking
 set autoread
+" Diffs are shown side-by-side not above/below
+set diffopt=vertical
+" Always show the sign column
+set signcolumn=no
+" True color mode! (Requires a fancy modern terminal, but iTerm works.)
+:set termguicolors
+" Write swap files to disk and trigger CursorHold event faster (default is
+" after 4000 ms of inactivity)
+:set updatetime=200
+" Completion options.
+"   menu: use a popup menu
+"   preview: show more info in menu
+:set completeopt=menu,preview
+
+" Use persistent undo history.
+if !isdirectory("/tmp/.vim-undo-dir")
+    call mkdir("/tmp/.vim-undo-dir", "", 0700)
+endif
+set undodir=/tmp/.vim-undo-dir
+set undofile
 
 set background=dark
 packadd! vim-dracula | colorscheme dracula
