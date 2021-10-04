@@ -53,7 +53,7 @@ ln -sr config/kitty ~/.config/
 
 ```sh
 sudo apt remove -y --auto-remove --purge gnome-games
-sudo apt install -y gnome-sushi gnome-mpv
+sudo apt install -y gnome-sushi gnome-mpv gnome-shell-extension-prefs
 ```
 
 ## Setup VSCode
