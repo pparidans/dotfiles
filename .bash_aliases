@@ -28,6 +28,9 @@ bind '"\e[Z": menu-complete-backward'
 # Display a list of the matching files
 bind 'set show-all-if-ambiguous on'
 
+# Avoid showing "Display all X possibilities (y/n)" too early
+bind 'set completion-query-items 1000'
+
 # Perform partial completion on the first Tab press,
 # only start cycling full results on the second Tab press
 bind 'set menu-complete-display-prefix on'
