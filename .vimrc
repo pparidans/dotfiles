@@ -92,5 +92,28 @@ packadd! vim-dracula | colorscheme dracula
 
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
-" Fuzzy Search with Ctrl-p
-nnoremap <c-p> :FZF<cr>
+"
+" Fuzzy Search with FZF (Ctrl-P keybind)
+"
+
+" Disable FZF preview window
+let g:fzf_preview_window = []
+
+" Check if in Git repository
+function! s:get_git_root()
+  let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
+  return v:shell_error ? '' : root
+endfunction
+
+" Search in Git files if possible, or fallback on regular file listing
+function! FilesOrGFiles()
+  let root = s:get_git_root()
+  if empty(root)
+    Files
+  else
+    GFiles
+  endif
+endfunction
+
+nnoremap <c-f> :Ag<cr>
+nnoremap <c-p> :call FilesOrGFiles()<cr>
