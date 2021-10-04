@@ -7,10 +7,7 @@ sudo apt install -y vim-nox git curl xsel tig fzf build-essential htop neofetch 
 ```
 
 ```sh
-ln -s `pwd`/.bash_aliases $HOME/
-ln -s `pwd`/.gitconfig $HOME/
-ln -s `pwd`/.vim* $HOME/
-
+ln -s $(pwd)/.{bash_aliases,gitconfig,vim*} $HOME/
 ```
 
 ## Setup Postgresql
