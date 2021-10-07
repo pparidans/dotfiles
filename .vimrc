@@ -96,9 +96,6 @@ set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 " Fuzzy Search with FZF (Ctrl-P keybind)
 "
 
-" Disable FZF preview window
-let g:fzf_preview_window = []
-
 " Check if in Git repository
 function! s:get_git_root()
   let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
@@ -106,14 +103,13 @@ function! s:get_git_root()
 endfunction
 
 " Search in Git files if possible, or fallback on regular file listing
-function! FilesOrGFiles()
+function! GitFilesOrFind()
   let root = s:get_git_root()
   if empty(root)
-    Files
+    call fzf#run({'sink': 'e'})
   else
-    GFiles
+    call fzf#run({'source': 'git ls-files', 'sink': 'e'})
   endif
 endfunction
 
-nnoremap <c-f> :Ag<cr>
-nnoremap <c-p> :call FilesOrGFiles()<cr>
+nnoremap <c-p> :call GitFilesOrFind()<cr>
