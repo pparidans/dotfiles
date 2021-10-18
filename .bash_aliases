@@ -50,9 +50,8 @@ if ! command_exists git; then
 else
     source /usr/share/bash-completion/completions/git
 
-    function git_current_branch() {
-         git branch --show-current
-    }
+    alias git_current_branch='git branch --show-current'
+    alias git_gone_branches='LANG=C git branch -v | grep " \[gone\] "  | sed "s/^ *//g" | cut -d" " -f1'
 
     alias gaa='git add --all'
     __git_complete gaa _git_add
