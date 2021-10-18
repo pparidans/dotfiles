@@ -1,2 +1,3 @@
 *.pyc
 config/Code/User/*
+config/fish/fish_variables
