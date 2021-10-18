@@ -22,14 +22,14 @@ createdb $USER
 ## Setup Odoo environment
 
 ```sh
-sudo apt install -y python3 python3-pip python3-venv wkhtmltopdf libsasl2-dev libldap2-dev libpq-dev
+sudo apt install -y python3 python3-pip python3-venv wkhtmltopdf libsasl2-dev libldap2-dev libpq-dev libjpeg-dev libxml2-dev libxslt1-dev
 ```
 
 Ensure the config has been reloaded (open a new terminal if needed):
 ```sh
 activate-odoo-venv
 pip install --upgrade pip wheel
-pip install -r requirements.txt inotify websocket-client
+pip install -r requirements.txt inotify websocket-client pudb
 ```
 
 ## Setup Youtube-dl
