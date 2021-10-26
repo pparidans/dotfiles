@@ -90,6 +90,12 @@ set undofile
 set background=dark
 packadd! vim-dracula | colorscheme dracula
 
+" Hide menubar
+set guioptions-=m
+
+" Hide toolbar
+set guioptions-=T
+
 set statusline=%<%f\ (%{&ft})\ %-4(%m%)%=%-19(%3l,%02c%03V%)
 
 "
