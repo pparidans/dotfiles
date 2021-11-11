@@ -3,7 +3,7 @@
 ## Setup
 
 ```sh
-sudo apt install -y vim-nox git curl xsel tig fzf build-essential htop neofetch rsync silversearcher-ag
+sudo apt install -y vim-nox git curl xsel tig build-essential htop neofetch rsync ripgrep
 ```
 
 ```sh
