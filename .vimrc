@@ -1,5 +1,16 @@
 " vim:set ts=2 sts=2 sw=2 expandtab:
 
+call plug#begin()
+
+Plug 'dracula/vim', { 'as': 'dracula' }
+
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'pangloss/vim-javascript'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+call plug#end()
+
 " remove all existing autocmds
 autocmd!
 
@@ -88,7 +99,7 @@ set undodir=/tmp/.vim-undo-dir
 set undofile
 
 set background=dark
-packadd! vim-dracula | colorscheme dracula
+colorscheme dracula
 
 " Hide menubar
 set guioptions-=m

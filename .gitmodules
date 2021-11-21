@@ -1,18 +1,3 @@
-[submodule ".vim/pack/user/opt/vim-dracula"]
-	path = .vim/pack/user/opt/vim-dracula
-	url = https://github.com/dracula/vim.git
-[submodule ".vim/pack/user/start/vim-better-whitespace"]
-	path = .vim/pack/user/start/vim-better-whitespace
-	url = https://github.com/ntpeters/vim-better-whitespace.git
-[submodule ".vim/pack/user/start/vim-javascript"]
-	path = .vim/pack/user/start/vim-javascript
-	url = https://github.com/pangloss/vim-javascript.git
-[submodule ".vim/pack/user/start/vim-ale"]
-	path = .vim/pack/user/start/vim-ale
-	url = https://github.com/w0rp/ale.git
-[submodule ".vim/pack/user/start/vim-fugitive"]
-	path = .vim/pack/user/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
-[submodule ".vim/pack/user/start/fzf"]
-	path = .vim/pack/user/start/fzf
-	url = https://github.com/junegunn/fzf.git
+[submodule "vendor/vim-plug"]
+	path = vendor/vim-plug
+	url = https://github.com/junegunn/vim-plug
