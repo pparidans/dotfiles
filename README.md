@@ -7,7 +7,7 @@ sudo apt install -y fish vim-nox git curl xsel tig build-essential htop neofetch
 ```
 
 ```sh
-ln -s $(pwd)/.{bash_aliases,gitconfig,vim*} $HOME/
+ln -s $(pwd)/.{gitconfig,vim*} $HOME/
 ```
 
 ## Setup Postgresql
@@ -53,7 +53,7 @@ ln -sr config/kitty ~/.config/
 
 ```sh
 sudo apt remove -y --auto-remove --purge gnome-games
-sudo apt install -y gnome-sushi gnome-mpv gnome-shell-extension-prefs
+sudo apt install -y gnome-sushi gnome-mpv gnome-shell-extension-prefs gnome-shell-extension-appindicator
 ```
 
 ## Setup VSCode
