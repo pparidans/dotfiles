@@ -22,7 +22,7 @@ createdb $USER
 ## Setup Odoo environment
 
 ```sh
-sudo apt install -y python3 python3-pip python3-venv wkhtmltopdf libsasl2-dev libldap2-dev libpq-dev libjpeg-dev libxml2-dev libxslt1-dev
+sudo apt install -y python3 python3-dev python3-pip python3-venv wkhtmltopdf libsasl2-dev libldap2-dev libpq-dev libjpeg-dev libxml2-dev libxslt1-dev
 ```
 
 Ensure the config has been reloaded (open a new terminal if needed):
