@@ -3,11 +3,25 @@
 ## Setup
 
 ```sh
-sudo apt install -y fish vim-nox git curl xsel tig build-essential htop neofetch rsync ripgrep
+sudo apt install -y fish vim git curl xsel tig build-essential htop neofetch rsync ripgrep jq
 ```
 
+### Change Shell to Fish
+
 ```sh
-ln -s $(pwd)/.{gitconfig,vim*} $HOME/
+chsh -s /usr/bin/fish
+```
+
+### Link config files
+
+Bash/Zsh:
+```sh
+ln -s $(pwd)/.{gitconfig,vim*} ~/
+```
+
+Fish:
+```sh
+ln -s (pwd)/{.gitconfig,.vim*} ~/
 ```
 
 ## Setup Postgresql
