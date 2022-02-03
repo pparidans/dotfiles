@@ -1,3 +1,7 @@
+# Disable Fish's greeting message
+set fish_greeting
+
+# Add ~/.local/bin to PATH
 if type -q fish_add_path
     # Available since 3.2.0
     fish_add_path -v -m ~/.local/bin
@@ -6,5 +10,6 @@ else
     contains (realpath ~/.local/bin) $fish_user_paths; or set -Ua fish_user_paths (realpath ~/.local/bin)
 end
 
+# Common aliases
 alias ll="ls -l"
 alias la="ls -la"

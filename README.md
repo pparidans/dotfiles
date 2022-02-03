@@ -22,6 +22,26 @@ ln -s $(pwd)/.{gitconfig,vim*} ~/
 Fish:
 ```sh
 ln -s (pwd)/{.gitconfig,.vim*} ~/
+ln -s (pwd)/config/fish ~/.config/
+```
+
+### Install VIM plugins
+
+In VIM:
+```vimscript
+:PlugInstall
+```
+
+## Setup Yewtube (fork of mps-youtube)
+
+Ensure `pipx` is installed:
+```sh
+sudo apt install python3-pip python3-venv mplayer
+pip3 install --user pipx
+```
+
+```sh
+pipx install git+https://github.com/iamtalhaasghar/yewtube.git
 ```
 
 ## Setup Postgresql
