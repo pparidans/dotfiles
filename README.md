@@ -44,6 +44,14 @@ pip3 install --user pipx
 pipx install git+https://github.com/iamtalhaasghar/yewtube.git
 ```
 
+## Setup Docker Compose
+
+```sh
+sudo apt install docker-compose
+
+adduser $USER docker
+```
+
 ## Setup Postgresql
 
 ```sh
