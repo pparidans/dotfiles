@@ -4,6 +4,7 @@
 [alias]
     br = branch -v
     co = checkout
+    fa = fetch --all --prune
     com = commit -v
     cur = branch --show-current
 [core]
