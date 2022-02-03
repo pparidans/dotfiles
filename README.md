@@ -79,7 +79,7 @@ ln -sr config/youtube-dl ~/.config/
 
 ```sh
 sudo apt remove -y --auto-remove --purge gnome-games
-sudo apt install -y gnome-sushi gnome-mpv gnome-shell-extension-prefs gnome-shell-extension-appindicator
+sudo apt install -y gnome-sushi gnome-tweaks gnome-shell-extension-prefs gnome-shell-extension-appindicator
 ```
 
 ## Setup VSCode
