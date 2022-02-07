@@ -1,24 +1,12 @@
 version: "3.3"
 services:
-    db:
-        image: postgres:13
-        volumes:
-            - ./.tmp/db:/var/lib/postgresql/data
-            - /etc/passwd:/etc/passwd:ro
-        environment:
-            POSTGRES_USER: odoo
-            POSTGRES_PASSWORD: password
-        user: "1000:1000"
-        ports:
-            - "5432:5432"
     dev_server:
         build: .
         volumes:
-            - .:/app
+            - .:/src
+            - ./tmp/data:/var/lib/odoo
             - /etc/passwd:/etc/passwd:ro
-            - ./.tmp/odoo:/var/lib/odoo
-        user: "1000:1000"
+            - /var/run/postgresql:/var/run/postgresql
+        user: "${USER_ID}:${USER_ID}"
         ports:
             - "8069:8069"
-        depends_on:
-            - db
