@@ -1,5 +1,5 @@
 # Defined in - @ line 1
-function odorun --wraps='docker run' --description 'Run Odoo server in Docker dev environment'
+function odorun --wraps='docker run' --description 'Run Odoo server in Docker dev environment (use current git branch)'
     docker run \
         --interactive \
         --tty \
@@ -11,5 +11,7 @@ function odorun --wraps='docker run' --description 'Run Odoo server in Docker de
         --volume /etc/passwd:/etc/passwd \
         --user (id -u):(id -u) \
         odoo-local-dev \
+	--database odoodb-(git --git-dir=odoo/.git branch --show-current) \
+	--addons-path=odoo/addons,enterprise \
         $argv;
 end
