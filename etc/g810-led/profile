@@ -1,0 +1,9 @@
+# Install your g810-led profile here
+# (applied at boot or keyboard connection)
+# See /usr/share/doc/g810-led/examples/sample_profiles
+
+# G810-LED Profile (turn all keys on)
+
+a 006677 # Set all keys on
+
+c # Commit changes
