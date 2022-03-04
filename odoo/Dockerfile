@@ -7,7 +7,7 @@ WORKDIR /src
 
 COPY ./odoo/requirements.txt ./
 RUN apt-get update && apt-get install -y libldap2-dev libsasl2-dev wkhtmltopdf postgresql-client chromium
-RUN pip install --no-cache-dir -r requirements.txt inotify pudb websocket-client
+RUN pip install --no-cache-dir -r requirements.txt inotify websocket-client
 
 EXPOSE 8069
 
