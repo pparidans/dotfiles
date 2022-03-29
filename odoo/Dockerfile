@@ -6,8 +6,9 @@ RUN pip install --no-cache-dir --upgrade pip wheel
 WORKDIR /src
 
 COPY ./odoo/requirements.txt ./
-RUN apt-get update && apt-get install -y libldap2-dev libsasl2-dev wkhtmltopdf postgresql-client chromium
+RUN apt-get update && apt-get install -y libpq-dev libldap2-dev libsasl2-dev postgresql-client wkhtmltopdf chromium nodejs npm
 RUN pip install --no-cache-dir -r requirements.txt inotify websocket-client
+RUN npm install --global es-check
 
 EXPOSE 8069
 
