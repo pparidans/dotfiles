@@ -5,10 +5,28 @@ RUN pip install --no-cache-dir --upgrade pip wheel
 
 WORKDIR /src
 
-COPY ./odoo/requirements.txt ./
-RUN apt-get update && apt-get install -y libpq-dev libldap2-dev libsasl2-dev postgresql-client wkhtmltopdf chromium nodejs npm
-RUN pip install --no-cache-dir -r requirements.txt inotify websocket-client
+RUN apt-get update && apt-get install -y libpq-dev libldap2-dev libsasl2-dev postgresql-client wkhtmltopdf nodejs npm
 RUN npm install --global es-check
+
+RUN curl https://raw.githubusercontent.com/odoo/odoo/master/requirements.txt -o /tmp/odoo-requirements.txt
+RUN pip install --no-cache-dir -r /tmp/odoo-requirements.txt inotify websocket-client
+
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_90.0.4430.93-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_91.0.4472.77-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_92.0.4515.107-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_93.0.4577.63-1_amd64.deb
+ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_94.0.4606.61-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_95.0.4638.54-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_96.0.4664.45-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_97.0.4692.71-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_98.0.4758.80-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_99.0.4844.51-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_100.0.4896.60-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_101.0.4951.64-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_102.0.5005.61-1_amd64.deb
+#ARG CHROME_URL=https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+RUN curl $CHROME_URL -o /tmp/chrome.deb && apt-get update && apt-get install -y /tmp/chrome.deb
 
 EXPOSE 8069
 
