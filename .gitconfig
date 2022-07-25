@@ -8,6 +8,7 @@
     st = status
     com = commit -v
     cur = branch --show-current
+    di = diff -w
 [core]
     editor = vim
 [color]
