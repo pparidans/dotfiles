@@ -9,6 +9,7 @@
     com = commit -v
     cur = branch --show-current
     di = diff -w
+    cp = cherry-pick
 [core]
     editor = vim
 [color]
