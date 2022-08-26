@@ -33,5 +33,10 @@ RUN curl $CHROME_URL -o /tmp/chrome.deb && apt-get update && apt-get install -y 
 
 EXPOSE 8069
 
-ENTRYPOINT ["python", "odoo/odoo-bin", "--data-dir", "/var/lib/odoo", "--db_host", "/var/run/postgresql", "--dev", "xml,qweb,reload"]
+VOLUME ["/var/lib/odoo"]
+
+ENV PGHOST=
+ENV PGUSER=odoo
+
+ENTRYPOINT [ "python", "odoo/odoo-bin", "--data-dir", "/var/lib/odoo", "--db_password", "odoo", "--dev", "xml,qweb,reload"]
 
