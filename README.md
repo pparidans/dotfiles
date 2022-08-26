@@ -3,7 +3,11 @@
 ## Setup
 
 ```sh
-sudo apt install -y fish vim git curl xsel tig build-essential htop neofetch rsync ripgrep jq
+sudo apt install -y fish vim git curl xsel tig build-essential htop neofetch rsync ripgrep jq tree
+```
+
+```sh
+sudo pacman -Syu fish vim git curl wl-clipboard tig base-devel htop neofetch rsync ripgrep jq tree
 ```
 
 ### Change Shell to Fish
