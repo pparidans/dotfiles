@@ -27,6 +27,7 @@ Fish:
 ```sh
 ln -s (pwd)/{.gitconfig,.vim*} ~/
 ln -s (pwd)/config/fish ~/.config/
+sudo ln -s (pwd)/etc/g810-led /etc/
 ```
 
 ### Install VIM plugins
