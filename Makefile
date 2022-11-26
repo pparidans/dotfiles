@@ -19,4 +19,4 @@ setup_vim:
 	ln -sr .vim* ~/
 
 setup_g810:
-	sudo ln -sr etc/g810-led /etc/
+	sudo ln -srf etc/g810-led /etc/
