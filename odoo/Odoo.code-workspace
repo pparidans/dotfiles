@@ -1,0 +1,85 @@
+{
+	"folders": [
+		{
+			"path": "enterprise"
+		},
+		{
+			"path": "mobile"
+		},
+		{
+			"path": "mobile-ios"
+		},
+		{
+			"path": "odoo"
+		},
+		{
+			"path": "upgrade"
+		}
+	],
+	"settings": {
+		"python.defaultInterpreterPath": "${workspaceFolder:odoo}/.venv/bin/python"
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Odoo",
+				"type": "python",
+				"request": "launch",
+				"cwd": "${workspaceFolder:odoo}",
+				"program": "${workspaceFolder:odoo}/odoo-bin",
+				"args": [
+					"--addons-path=./addons,../enterprise",
+					"-p", "8069",
+					"-d", "odoodb",
+					"--dev", "xml,qweb,reload",
+					"--limit-time-real", "0",
+					"--limit-memory-hard", "-1",
+					"--limit-memory-soft", "0",
+					"--workers", "0",
+					"--limit-request", "0",
+					"--max-cron-threads", "0"
+				],
+			},
+			{
+				"name": "Odoo (community)",
+				"type": "python",
+				"request": "launch",
+				"cwd": "${workspaceFolder:odoo}",
+				"program": "${workspaceFolder:odoo}/odoo-bin",
+				"args": [
+					"--addons-path=./addons",
+					"-p", "8069",
+					"-d", "odoodb",
+					"--dev", "xml,qweb,reload",
+					"--limit-time-real", "0",
+					"--limit-memory-hard", "-1",
+					"--limit-memory-soft", "0",
+					"--workers", "0",
+					"--limit-request", "0",
+					"--max-cron-threads", "0"
+				],
+			},
+			{
+				"name": "Odoo (no demo data)",
+				"type": "python",
+				"request": "launch",
+				"cwd": "${workspaceFolder:odoo}",
+				"program": "${workspaceFolder:odoo}/odoo-bin",
+				"args": [
+					"--addons-path=./addons,../enterprise",
+					"-p", "8069",
+					"-d", "odoodb",
+					"--dev", "xml,qweb,reload",
+					"--limit-time-real", "0",
+					"--limit-memory-hard", "-1",
+					"--limit-memory-soft", "0",
+					"--workers", "0",
+					"--limit-request", "0",
+					"--max-cron-threads", "0",
+					"--without-demo", "all"
+				],
+			}
+		]
+	}
+}
