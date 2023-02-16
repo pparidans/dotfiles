@@ -6,6 +6,7 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript'
+Plug 'dense-analysis/ale'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
