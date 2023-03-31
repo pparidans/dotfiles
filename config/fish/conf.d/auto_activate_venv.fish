@@ -4,6 +4,6 @@ function __auto_activate_venv --on-variable PWD --description "Automatically act
   if ! test -f $VENV_PATH/bin/activate.fish
     return
   end
-  echo "Activate VENV for $VENV_PATH"
+  # Activate VENV for $VENV_PATH
   source $VENV_PATH/bin/activate.fish
 end
