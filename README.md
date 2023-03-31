@@ -2,12 +2,15 @@
 
 ## Setup
 
+### Utilities
+
 ```sh
-sudo apt install -y fish vim git curl xsel tig build-essential htop neofetch rsync ripgrep jq tree
+sudo apt install fish xsel vim vim-gtk3 git tig curl htop neofetch rsync tree ripgrep fzf build-essential
 ```
 
 ```sh
-sudo pacman -Syu fish vim git curl wl-clipboard tig base-devel htop neofetch rsync ripgrep jq tree
+sudo dnf group install "C Development Tools and Libraries" "Development Tools"
+sudo dnf install fish xsel vim vim-X11 git tig curl htop neofetch rsync tree ripgrep fzf util-linux-user
 ```
 
 ### Change Shell to Fish
@@ -18,15 +21,10 @@ chsh -s /usr/bin/fish
 
 ### Link config files
 
-Bash/Zsh:
+From the dotfiles directory:
 ```sh
-ln -s $(pwd)/.{gitconfig,vim*} ~/
-```
-
-Fish:
-```sh
-ln -s (pwd)/{.gitconfig,.vim*} ~/
-ln -s (pwd)/config/fish ~/.config/
+ln -sr {.gitconfig,.vim*} ~/
+ln -sr config/fish ~/.config/
 sudo ln -s (pwd)/etc/g810-led /etc/
 ```
 
@@ -37,55 +35,19 @@ In VIM:
 :PlugInstall
 ```
 
-## Setup Yewtube (fork of mps-youtube)
-
-Ensure `pipx` is installed:
-```sh
-sudo apt install python3-pip python3-venv mplayer
-pip3 install --user pipx
-```
-
-```sh
-pipx install git+https://github.com/iamtalhaasghar/yewtube.git
-```
-
-## Setup Docker Compose
-
-```sh
-sudo apt install docker-compose
-
-adduser $USER docker
-```
-
 ## Setup Postgresql
 
 ```sh
-sudo apt install -y postgresql
+sudo apt install postgresql
+```
 
+```sh
+sudo dnf install postgresql-server postgresql-contrib
+```
+
+```sh
 sudo -u postgres createuser -s $USER
 createdb $USER
-```
-
-## Setup Odoo environment
-
-```sh
-sudo apt install -y python3 python3-dev python3-pip python3-venv wkhtmltopdf libsasl2-dev libldap2-dev libpq-dev libjpeg-dev libxml2-dev libxslt1-dev
-```
-
-Ensure the config has been reloaded (open a new terminal if needed):
-```sh
-activate-odoo-venv
-pip install --upgrade pip wheel
-pip install -r requirements.txt inotify websocket-client pudb
-```
-
-## Setup Youtube-dl
-
-```sh
-sudo apt install -y atomicparsley ffmpeg
-pip install --user youtube-dl
-
-ln -sr config/youtube-dl ~/.config/
 ```
 
 ## Setup Gnome
@@ -95,48 +57,28 @@ sudo apt remove -y --auto-remove --purge gnome-games
 sudo apt install -y gnome-sushi gnome-tweaks gnome-shell-extension-prefs gnome-shell-extension-appindicator
 ```
 
-## Setup VSCode
-
-Install Visual Studio Code through either `.deb` or `snap` package.
-
 ```sh
-mkdir -p ~/.config/Code
-ln -sr config/Code/User ~/.config/Code/
-
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension eamodio.gitlens
-code --install-extension ms-python.python
-code --install-extension redhat.vscode-xml
-code --install-extension rust-lang.rust
-code --install-extension be5invis.toml
-code --install-extension esbenp.prettier-vscode
+sudo dnf install sushi gnome-tweaks
+sudo dnf swap gnome-terminal gnome-console
 ```
 
-# Firefox (Flatpak)
+## Setup Odoo development environment
 
-## Fonts issue
-
-See https://bugzilla.mozilla.org/show_bug.cgi?id=1621915
+### Dependencies
 
 ```sh
-sudo flatpak install flathub org.mozilla.firefox
-
-mkdir -p ~/.var/app/org.mozilla.firefox/config/fontconfig/
-
-cat > ~/.var/app/org.mozilla.firefox/config/fontconfig/fonts.conf << EOF
-<?xml version='1.0'?>
-<!DOCTYPE fontconfig SYSTEM 'fonts.dtd'>
-<fontconfig>
-    <!-- Disable bitmap fonts. -->
-    <selectfont><rejectfont><pattern>
-        <patelt name="scalable"><bool>false</bool></patelt>
-    </pattern></rejectfont></selectfont>
-</fontconfig>
-EOF
+sudo apt install python3 python3-dev python3-pip python3-venv wkhtmltopdf libsasl2-dev libldap2-dev libpq-dev libjpeg-dev libxml2-dev libxslt1-dev
 ```
 
-## GPU accelerated decoding
-
 ```sh
-sudo flatpak install flathub org.freedesktop.Platform.ffmpeg-full
+sudo dnf install python3.10 python3.10-dev libpq-devel openldap-devel`
+```
+
+### Create VirtualEnv
+
+From the Odoo community directory:
+```sh
+python3.10 -m venv --prompt odoo --upgrade-deps .venv
+pip install -r requirements-dev.txt
+pip install -r requirements.txt
 ```
