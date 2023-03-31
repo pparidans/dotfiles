@@ -1,2 +1,5 @@
+wheel
 inotify
 websocket-client
+dbfread
+google_auth
