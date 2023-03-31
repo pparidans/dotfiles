@@ -5,8 +5,8 @@ import { DOMParser } from "https://deno.land/x/deno_dom/deno-dom-wasm.ts";
 const [channelIdentifier] = Deno.args;
 
 if (!channelIdentifier || !channelIdentifier.trim()) {
-    console.error("Error: A channel identifier is required");
-    Deno.exit(1);
+  console.error("Error: A channel identifier is required");
+  Deno.exit(1);
 }
 
 const channelURL = `https://www.youtube.com/${channelIdentifier}`;
@@ -14,11 +14,12 @@ const response = await fetch(channelURL);
 const body = await response.text();
 
 const document = new DOMParser().parseFromString(body, "text/html");
-const canonicalURL = document.querySelector("link[rel=canonical]")?.getAttribute("href");
+const canonicalURL = document.querySelector("link[rel=canonical]")
+  ?.getAttribute("href");
 const parts = canonicalURL.split("/");
-const channelId = parts[parts.length - 1];
+const channelId = parts.slice(-1);
 
-const feedURL = `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
+const feedURL =
+  `https://www.youtube.com/feeds/videos.xml?channel_id=${channelId}`;
 
 console.log(`Feed URL: ${feedURL}`);
-
