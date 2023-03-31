@@ -1,1 +1,1 @@
-../../vendor/vim-plug/plug.vim
+../../vendor/plug.vim
