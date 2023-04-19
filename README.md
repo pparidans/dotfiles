@@ -4,13 +4,15 @@
 
 ### Utilities
 
+Debian:
 ```sh
-sudo apt install fish xsel vim vim-gtk3 git tig curl htop neofetch rsync tree ripgrep fzf build-essential
+sudo apt install -y fish git xsel vim vim-gtk3 tig bat curl htop neofetch rsync tree ripgrep fzf build-essential
+sudo apt install -y -t bullseye-backports fish git
 ```
-
+Fedora:
 ```sh
 sudo dnf group install "C Development Tools and Libraries" "Development Tools"
-sudo dnf install fish xsel vim vim-X11 git tig curl htop neofetch rsync tree ripgrep fzf util-linux-user
+sudo dnf install fish xsel vim vim-X11 git tig bat curl htop neofetch rsync tree ripgrep fzf util-linux-user
 ```
 
 ### Change Shell to Fish
@@ -38,7 +40,7 @@ In VIM:
 ## Setup Postgresql
 
 ```sh
-sudo apt install postgresql
+sudo apt install -y postgresql
 ```
 
 ```sh
