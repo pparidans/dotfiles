@@ -52,6 +52,12 @@ sudo -u postgres createuser -s $USER
 createdb $USER
 ```
 
+## Setup Nix
+
+```sh
+sh <(curl -L https://nixos.org/nix/install) --daemon
+```
+
 ## Setup Gnome
 
 ```sh
