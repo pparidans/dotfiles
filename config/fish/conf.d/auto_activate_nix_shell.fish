@@ -3,5 +3,6 @@ function __auto_activate_nix_shell --on-variable PWD --description "Automaticall
   if ! test -f (realpath $PWD/shell.nix)
     return
   end
+  echo "Entering nix-shell..."
   nix-shell
 end
