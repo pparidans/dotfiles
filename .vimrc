@@ -9,6 +9,7 @@ call plug#begin()
   Plug 'LnL7/vim-nix'
   Plug 'dag/vim-fish'
   Plug 'dense-analysis/ale'
+  Plug 'tpope/vim-fugitive'
   Plug 'junegunn/fzf'
   Plug 'junegunn/fzf.vim'
   Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
