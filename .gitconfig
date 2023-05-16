@@ -14,3 +14,7 @@
     editor = vim
 [color]
     ui = auto
+[rebase]
+	instructionFormat = (%an) %s
+[commit]
+    verbose = true
