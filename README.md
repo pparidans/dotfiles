@@ -75,7 +75,7 @@ sudo dnf swap gnome-terminal gnome-console
 ### Dependencies
 
 ```sh
-sudo apt install python3 python3-dev python3-pip python3-venv wkhtmltopdf libsasl2-dev libldap2-dev libpq-dev libjpeg-dev libxml2-dev libxslt1-dev
+sudo apt install python3 python3-dev python3-wheel python3-venv wkhtmltopdf libsasl2-dev libldap2-dev libpq-dev libjpeg-dev libxml2-dev libxslt1-dev
 ```
 
 ```sh

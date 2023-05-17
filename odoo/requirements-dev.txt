@@ -1,4 +1,3 @@
-wheel
 inotify
 websocket-client
 dbfread
