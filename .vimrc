@@ -6,7 +6,6 @@ call plug#begin()
 
   "Plug 'ntpeters/vim-better-whitespace'
   "Plug 'pangloss/vim-javascript'
-  Plug 'LnL7/vim-nix'
   Plug 'dag/vim-fish'
   Plug 'dense-analysis/ale'
   Plug 'tpope/vim-fugitive'
