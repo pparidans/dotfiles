@@ -60,8 +60,12 @@ sudo apt install -y gnome-sushi gnome-tweaks gnome-shell-extension-prefs gnome-s
 ```
 
 ```sh
-sudo dnf install sushi gnome-tweaks
-sudo dnf swap gnome-terminal gnome-console
+sudo dnf install sushi
+```
+
+Disable caps-lock keybinding:
+```sh
+gsettings set org.gnome.desktop.input-sources xkb-options "['caps:none']"
 ```
 
 ## Setup Odoo development environment
