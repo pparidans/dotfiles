@@ -24,6 +24,8 @@ call plug#end()
 "set hidden
 " bigger commands/search history
 "set history=10000
+" show lines' number
+set number
 " default indentation
 set expandtab
 set tabstop=4
