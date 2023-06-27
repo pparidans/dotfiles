@@ -5,7 +5,7 @@ shopt -s autocd
 bind 'set completion-ignore-case on'
 
 # If there are multiple matches for completion, Tab should cycle through them
-bind '\t:menu-complete'
+bind 'TAB:menu-complete'
 # And Shift-Tab should cycle backwards
 bind '"\e[Z": menu-complete-backward'
 
