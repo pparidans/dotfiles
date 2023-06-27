@@ -2,18 +2,13 @@
 
 call plug#begin()
   Plug 'tpope/vim-sensible'
-  Plug 'sonph/onehalf', { 'rtp': 'vim/' }
-
+  Plug 'sainnhe/edge'
   "Plug 'ntpeters/vim-better-whitespace'
   "Plug 'pangloss/vim-javascript'
-  Plug 'dag/vim-fish'
   Plug 'dense-analysis/ale'
   Plug 'tpope/vim-fugitive'
-  Plug 'junegunn/fzf'
-  Plug 'junegunn/fzf.vim'
-  Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' }
   Plug 'vim-airline/vim-airline'
-  "Plug 'vim-airline/vim-airline-themes'
+  Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
 call plug#end()
 
 " remove all existing autocmds
@@ -105,11 +100,13 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 "set undodir=/tmp/.vim-undo-dir
 "set undofile
 "
-" Set the OneHalf color theme if available
+" Set the colorscheme if available
+silent! colorscheme edge
+
 if has('gui_running')
-  silent! colorscheme onehalflight
+    set background=light
 else
-  silent! colorscheme onehalfdark
+    set background=dark
 endif
 "
 " Hide menubar
@@ -122,42 +119,40 @@ set guioptions-=T
 
 " Sensible clipboard keybindings in GUI mode
 if has('gui_running') && has("clipboard")
-    " CTRL-X and SHIFT-Del are Cut
+    " CTRL-SHIFT-X is Cut
     vnoremap <C-S-X> "+x
-    "vnoremap <S-Del> "+x
 
-    " CTRL-C and CTRL-Insert are Copy
+    " CTRL-SHIFT-C is Copy
     vnoremap <C-S-C> "+y
-    "vnoremap <C-Insert> "+y
 
-    " CTRL-V and SHIFT-Insert are Paste
+    " CTRL-SHIFT-V is Paste
     map <C-S-V> "+gP
-    "map <S-Insert> "+gP
-
     cmap <C-S-V> <C-R>+
-    "cmap <S-Insert> <C-R>+
 endif
 
-" NERDTree keybindings
-nnoremap <c-b> :NERDTreeToggle<cr>
+" Split & Explore current file's directory
+nnoremap <C-B> :Sexplore<CR>
 
-" Fuzzy Search with FZF (Ctrl-P keybind)
-nnoremap <c-p> :FZF!<cr>
-
-" Check if in Git repository
-"function! s:get_git_root()
-"  let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
-"  return v:shell_error ? '' : root
-"endfunction
-
-" Search in Git files if possible, or fallback on regular file listing
-"function! GitFilesOrFind()
-"  let root = s:get_git_root()
-"  if empty(root)
-"    call fzf#run({'sink': 'e'})
-"  else
-"    call fzf#run({'source': 'git ls-files', 'sink': 'e'})
-"  endif
-"endfunction
 "
-"nnoremap <c-p> :call GitFilesOrFind()<cr>
+" Leaderf
+"
+" Don't show file's icons
+let g:Lf_ShowDevIcons = 0
+" Fuzzy search files (Ctrl-P keybind)
+let g:Lf_ShortcutF = '<C-P>'
+" Fuzzy search buffers
+noremap <C-O> :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+" Uses Up/Down arrows to navigate results
+let g:Lf_CommandMap = {'<C-K>': ['<Up>'], '<C-J>': ['<Down>']}
+" Disable preview for files search
+let g:Lf_PreviewResult = { 'File': 0, 'Rg': 1, 'Buffer': 0 }
+" Enable popup mode
+let g:Lf_WindowPosition = 'popup'
+let g:Lf_PreviewInPopup = 1
+
+" Search using ripgrep
+"noremap <C-B> :<C-U><C-R>=printf("Leaderf! rg --current-buffer -e %s ", expand("<cword>"))<CR>
+noremap <C-F> :<C-U><C-R>=printf("Leaderf! rg -e %s ", expand("<cword>"))<CR>
+" search visually selected text literally
+xnoremap gf :<C-U><C-R>=printf("Leaderf! rg -F -e %s ", leaderf#Rg#visual())<CR>
+noremap go :<C-U>Leaderf! rg --recall<CR>
