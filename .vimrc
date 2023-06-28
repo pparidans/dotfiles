@@ -103,11 +103,6 @@ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " Set the colorscheme if available
 silent! colorscheme edge
 
-if has('gui_running')
-    set background=light
-else
-    set background=dark
-endif
 "
 " Hide menubar
 set guioptions-=m
