@@ -30,6 +30,9 @@ bind '"\e[1;5D":backward-word'
 # Number of trailing directories to show in prompt
 PROMPT_DIRTRIM=2
 
+alias create-venv="python3 -m venv --prompt venv --upgrade-deps .venv"
+alias full-upd="sudo nala upgrade && sudo snap refresh"
+
 # PastBoard aliases
 if command -v xsel &> /dev/null; then
     alias pbcopy="xsel --clipboard --input"
