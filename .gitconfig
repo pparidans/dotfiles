@@ -10,7 +10,7 @@
     cur = branch --show-current
     di = diff -w
     cp = cherry-pick
-    upd = pull --ff-only
+    upd = pull --ff-only --autostash
     puf = push --force-with-lease
 [core]
     editor = vim
