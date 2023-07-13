@@ -25,7 +25,7 @@ chsh -s /usr/bin/fish
 
 From the dotfiles directory:
 ```sh
-ln -sr {.gitconfig,.vim*} ~/
+ln -sr {.gitconfig,.vim} ~/
 ln -sr config/fish ~/.config/
 sudo ln -s (pwd)/etc/g810-led /etc/
 ```
