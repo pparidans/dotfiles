@@ -52,6 +52,7 @@ set nobackup
 set nowritebackup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+let g:netrw_home=$XDG_CACHE_HOME.'/vim'
 " allow backspacing over everything in insert mode
 "set backspace=indent,eol,start
 " show incomplete commands
