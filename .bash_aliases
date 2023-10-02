@@ -71,3 +71,6 @@ function cd() {
     fi
 }
 
+alias odorun="python odoo/odoo-bin --database=odoodb --workers=0 --max-cron-threads=0 --dev=xml,reload"
+alias odotest="python odoo/odoo-bin --database=odoodb --workers=0 --max-cron-threads=0 --dev=xml --stop-after-init --test-enable"
+alias ododrop="dropdb odoodb"
