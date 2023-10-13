@@ -65,12 +65,16 @@ fi
 
 # Automatically activate Python's virtualenv when changing directory
 function cd() {
-    builtin cd "$@"
+    builtin cd "$@" || exit
     if [ -d .venv ]; then
         source .venv/bin/activate
     fi
 }
 
-alias odorun="python odoo/odoo-bin --database=odoodb --workers=0 --max-cron-threads=0 --dev=xml,reload"
-alias odotest="python odoo/odoo-bin --database=odoodb --workers=0 --max-cron-threads=0 --dev=xml --stop-after-init --test-enable"
-alias ododrop="dropdb odoodb"
+# Odoo toolbelt
+ODOO_DATABASE_NAME=odoodb
+
+alias odorun="python odoo/odoo-bin --database=$ODOO_DATABASE_NAME --workers=0 --max-cron-threads=0 --dev=xml,reload"
+alias odoinit="python odoo/odoo-bin --database=$ODOO_DATABASE_NAME --workers=0 --max-cron-threads=0 --dev=xml --stop-after-init"
+alias odotest="odoinit --test-enable"
+alias ododrop="dropdb $ODOO_DATABASE_NAME"
