@@ -1,6 +1,9 @@
 {
 	"folders": [
 		{
+			"path": "odoo"
+		},
+		{
 			"path": "enterprise"
 		},
 		{
@@ -8,9 +11,6 @@
 		},
 		{
 			"path": "mobile-ios"
-		},
-		{
-			"path": "odoo"
 		},
 		{
 			"path": "upgrade"
