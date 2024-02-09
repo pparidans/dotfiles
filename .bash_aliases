@@ -75,6 +75,9 @@ function cd() {
 ODOO_DATABASE_NAME=odoodb
 
 alias odorun="python odoo/odoo-bin --database=$ODOO_DATABASE_NAME --workers=0 --max-cron-threads=0 --dev=xml,reload"
+alias odorun-ent="odorun --addons-path=odoo/addons,enterprise"
 alias odoinit="python odoo/odoo-bin --database=$ODOO_DATABASE_NAME --workers=0 --max-cron-threads=0 --dev=xml --stop-after-init"
+alias odoinit-ent="odoinit --addons-path=odoo/addons,enterprise"
 alias odotest="odoinit --test-enable"
+alias odotest-ent="odotest --addons-path=odoo/addons,enterprise"
 alias ododrop="dropdb $ODOO_DATABASE_NAME"
