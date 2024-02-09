@@ -31,7 +31,7 @@ bind '"\e[1;5D":backward-word'
 PROMPT_DIRTRIM=2
 
 alias create-venv="python3 -m venv --prompt venv --upgrade-deps .venv"
-alias full-upd="sudo apt update && sudo apt upgrade && flatpak update"
+alias deb-upd="sudo apt update && sudo apt upgrade && flatpak update"
 
 alias ll="ls -l"
 alias la="ls -la"
