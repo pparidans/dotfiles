@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Automatically change directory
 shopt -s autocd
 
@@ -81,3 +83,37 @@ alias odoinit-ent="odoinit --addons-path=odoo/addons,enterprise"
 alias odotest="odoinit --test-enable"
 alias odotest-ent="odotest --addons-path=odoo/addons,enterprise"
 alias ododrop="dropdb $ODOO_DATABASE_NAME"
+
+function odoget() {
+    DB_URL=$1
+    echo "Restoring from $DB_URL"
+    zipname=$(basename "$DB_URL")
+    dbname=${zipname%.*}
+    tmp_restore_path="/tmp/restore-$dbname"
+    if [ -d "$tmp_restore_path" ]; then
+        rm -r "$tmp_restore_path"
+    fi
+    mkdir "$tmp_restore_path"
+
+    echo "Downloading..."
+    wget "$DB_URL" -P "$tmp_restore_path"
+    unzip "$tmp_restore_path/$zipname" -d "$tmp_restore_path"
+
+    echo "Restoring filestore..."
+    filestore_path="$HOME/.local/share/Odoo/filestore/$dbname"
+    if [ -d "$filestore_path" ]; then
+        rm -r "$filestore_path"
+    fi
+    mkdir "$filestore_path"
+    mv "$tmp_restore_path"/filestore/* "$filestore_path"
+
+    echo "Restoring database..."
+    dropdb "$dbname" --if-exists
+    createdb "$dbname"
+    psql -q "$dbname" < "$tmp_restore_path/dump.sql"
+
+    echo "Cleaning up..."
+    rm -r "$tmp_restore_path"
+
+    echo "Created db in $dbname"
+}
