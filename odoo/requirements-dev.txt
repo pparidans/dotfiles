@@ -2,6 +2,7 @@ inotify
 websocket-client
 dbfread
 google_auth
-#pdfminer.six
+pdfminer.six
 phonenumbers
-
+astroid
+pylint
