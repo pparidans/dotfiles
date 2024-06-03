@@ -37,6 +37,12 @@ In VIM:
 :PlugInstall
 ```
 
+### Powerline
+
+```
+sudo apt install -y powerline powerline-gitstatus fonts-powerline
+```
+
 ## Setup Postgresql
 
 ```sh

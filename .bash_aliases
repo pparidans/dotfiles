@@ -54,13 +54,6 @@ if command -v git &> /dev/null; then
         source "$BASH_COMPLETION_GIT"
     fi
 
-    export GIT_PS1_SHOWDIRTYSTATE=1
-    export GIT_PS1_SHOWUNTRACKEDFILES=1
-    export GIT_PS1_DESCRIBE_STYLE=branch
-    export GIT_PS1_SHOWCOLORHINTS=1
-    export GIT_PS1_HIDE_IF_PWD_IGNORED=1
-    export PS1=$(sed 's/ *\\$ *$//' <<<"${PS1}")'$(__git_ps1 " (%s)")\[\e[0;37m\] \$\[\e[0m\] '
-
     # list all local branches for which the remote is "gone"
     alias git-branches-gone='LANG=C git branch -v | grep " \[gone\] " | sed "s/^ *//g" | cut -d" " -f1'
 fi
@@ -117,3 +110,11 @@ function odoget() {
 
     echo "Created db in $dbname"
 }
+
+# Powerline prompt
+if command -v powerline-daemon &> /dev/null; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    source /usr/share/powerline/bindings/bash/powerline.sh
+fi
