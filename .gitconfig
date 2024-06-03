@@ -3,6 +3,7 @@
     email = pierre@paridans.org
 [alias]
     br = branch -v
+    br-gone = ! LANG=C git branch -vv | awk '/: gone]/{print $1}'
     co = checkout
     fa = fetch --all --prune
     st = status

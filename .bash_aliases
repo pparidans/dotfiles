@@ -29,9 +29,6 @@ bind '"\e[B":history-search-forward'
 bind '"\e[1;5C":forward-word'
 bind '"\e[1;5D":backward-word'
 
-# Number of trailing directories to show in prompt
-PROMPT_DIRTRIM=2
-
 alias create-venv="python3 -m venv --prompt venv --upgrade-deps .venv"
 alias deb-upd="sudo apt update && sudo apt upgrade && flatpak update"
 
@@ -47,24 +44,13 @@ else
     alias pbpaste="xsel --clipboard --output"
 fi
 
-# Git completion & prompt
-if command -v git &> /dev/null; then
-    BASH_COMPLETION_GIT="/usr/share/bash-completion/completions/git"
-    if [ -f "$BASH_COMPLETION_GIT" ]; then
-        source "$BASH_COMPLETION_GIT"
-    fi
-
-    # list all local branches for which the remote is "gone"
-    alias git-branches-gone='LANG=C git branch -v | grep " \[gone\] " | sed "s/^ *//g" | cut -d" " -f1'
+# Powerline prompt
+if command -v powerline-daemon &> /dev/null; then
+    powerline-daemon -q
+    POWERLINE_BASH_CONTINUATION=1
+    POWERLINE_BASH_SELECT=1
+    source /usr/share/powerline/bindings/bash/powerline.sh
 fi
-
-# Automatically activate Python's virtualenv when changing directory
-function cd() {
-    builtin cd "$@" || exit
-    if [ -d .venv ]; then
-        source .venv/bin/activate
-    fi
-}
 
 # Odoo toolbelt
 ODOO_DATABASE_NAME=odoodb
@@ -110,11 +96,3 @@ function odoget() {
 
     echo "Created db in $dbname"
 }
-
-# Powerline prompt
-if command -v powerline-daemon &> /dev/null; then
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
-    source /usr/share/powerline/bindings/bash/powerline.sh
-fi
