@@ -34,6 +34,14 @@ alias create-venv="python3 -m venv --prompt venv --upgrade-deps .venv"
 alias ll="ls -l"
 alias la="ls -la"
 
+# Automatically activate Python's virtualenv when changing directory
+function cd() {
+    builtin cd "$@" || exit
+    if [ -d .venv ]; then
+        source .venv/bin/activate
+    fi
+}
+
 # PastBoard aliases
 if [[ ! -z "$WAYLAND_DISPLAY" ]]; then
     alias pbcopy="wl-copy"
