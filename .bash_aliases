@@ -43,7 +43,7 @@ function cd() {
 }
 
 # PastBoard aliases
-if [[ ! -z "$WAYLAND_DISPLAY" ]]; then
+if [[ -n  "$WAYLAND_DISPLAY" ]]; then
     alias pbcopy="wl-copy"
     alias pbpaste="wl-paste"
 else
