@@ -51,12 +51,14 @@ else
     alias pbpaste="xsel --clipboard --output"
 fi
 
+# FZF integration
+if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
+    source /usr/share/doc/fzf/examples/key-bindings.bash
+fi
+
 # Powerline prompt
-if command -v powerline-daemon &> /dev/null; then
-    powerline-daemon -q
-    POWERLINE_BASH_CONTINUATION=1
-    POWERLINE_BASH_SELECT=1
-    source /usr/share/powerline/bindings/bash/powerline.sh
+if [ -f /usr/share/powerline/integrations/powerline.sh ]; then
+    source /usr/share/powerline/integrations/powerline.sh
 fi
 
 # Odoo toolbelt
