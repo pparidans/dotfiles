@@ -12,6 +12,7 @@
     di = diff -w
     cp = cherry-pick
     upd = pull --ff-only --autostash
+    pu = push
     puf = push --force-with-lease
 [core]
     editor = vim
