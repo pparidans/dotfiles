@@ -5,7 +5,7 @@
 ### Utilities
 
 ```sh
-sudo apt install -y git xsel wl-clipboard vim-nox tig curl btop rsync tree ripgrep fzf build-essential shellcheck
+sudo apt install -y git xsel wl-clipboard tig curl btop rsync tree ripgrep fzf build-essential shellcheck
 ```
 
 ### Fonts
@@ -18,12 +18,24 @@ sudo apt install -y fonts-recommended fonts-powerline
 
 From the dotfiles directory:
 ```sh
-ln -sr {.gitconfig,.vim,.bash_aliases} ~/
+ln -sr {.gitconfig,.bash_aliases} ~/
 ```
 
-### Install VIM plugins
+### Install (Neo)VIM plugins
 
-In VIM:
+For VIM:
+```sh
+sudo apt install -y vim-nox
+ln -sr .vim ~/
+```
+
+For NeoVIM:
+```sh
+sudo apt install -y neovim
+ln -sr .vim ~/.config/nvim
+```
+
+Inside (Neo)VIM:
 ```vimscript
 :PlugInstall
 ```
