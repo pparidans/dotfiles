@@ -70,7 +70,7 @@ alias odoinit="python odoo/odoo-bin --database=$ODOO_DATABASE_NAME --workers=0 -
 alias odoinit-ent="odoinit --addons-path=odoo/addons,enterprise"
 alias odotest="odoinit --test-enable"
 alias odotest-ent="odotest --addons-path=odoo/addons,enterprise"
-alias ododrop="dropdb $ODOO_DATABASE_NAME --if-exists && rm -r $HOME/.local/share/Odoo/sessions"
+alias ododrop="dropdb $ODOO_DATABASE_NAME --if-exists && rm -rf $HOME/.local/share/Odoo"
 
 function odoget() {
     DB_URL=$1
