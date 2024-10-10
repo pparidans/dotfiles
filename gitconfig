@@ -6,7 +6,7 @@
     br-gone = ! LANG=C git branch -vv | awk '/: gone]/{print $1}'
     co = checkout
     fa = fetch --all --prune
-    st = status
+    st = status --untracked-files
     com = commit -v
     cur = branch --show-current
     di = diff -w
@@ -15,7 +15,7 @@
     pu = push
     puf = push --force-with-lease
 [core]
-    editor = vim
+    editor = nvim
 [color]
     ui = auto
 [rebase]

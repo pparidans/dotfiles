@@ -5,7 +5,7 @@
 ### Utilities
 
 ```sh
-sudo apt install -y git xsel wl-clipboard tig curl btop rsync tree ripgrep fzf build-essential shellcheck
+sudo apt install -y git xsel wl-clipboard tig curl htop rsync tree ripgrep fzf build-essential shellcheck
 ```
 
 ### Fonts
@@ -14,25 +14,40 @@ sudo apt install -y git xsel wl-clipboard tig curl btop rsync tree ripgrep fzf b
 sudo apt install -y fonts-recommended fonts-powerline
 ```
 
-### Link config files
+### Configure Git
 
 From the dotfiles directory:
 ```sh
-ln -sr {.gitconfig,.bash_aliases} ~/
+ln -sr gitconfig ~/.gitconfig
 ```
 
-### Install (Neo)VIM plugins
+### Configure Bash
 
-For VIM:
+From the dotfiles directory:
 ```sh
-sudo apt install -y vim-nox
-ln -sr .vim ~/
+ln -sr .bash_aliases ~/
 ```
 
-For NeoVIM:
+### Install Fish
+
+```sh
+sudp apt install -y fish
+```
+
+From the dotfiles directory:
+```sh
+ln -sr config/fish ~/.config/
+```
+
+### Install (Neo)VIM
+
 ```sh
 sudo apt install -y neovim
-ln -sr .vim ~/.config/nvim
+```
+
+From the dotfiles directory:
+```sh
+ln -sr config/nvim ~/.config/
 ```
 
 Inside (Neo)VIM:
