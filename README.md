@@ -5,7 +5,7 @@
 ### Utilities
 
 ```sh
-sudo apt install -y git xsel wl-clipboard tig curl htop rsync tree ripgrep fzf build-essential shellcheck
+sudo apt install -y git xsel wl-clipboard tig curl htop rsync tree ripgrep fzf fd-find build-essential shellcheck
 ```
 
 ### Fonts
