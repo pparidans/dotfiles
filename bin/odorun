@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+odoo_bin="./odoo/odoo-bin"
+if [ ! -f $odoo_bin ]; then
+    echo "No 'odoo-bin' found at [$odoo_bin]" >&2
+    exit 1
+fi
+
+python_bin="python3"
+if [ -d .venv ]; then
+    python_bin=".venv/bin/python3"
+fi
+
+chrome_path=""
+chrome_version=${CHROME:-""}
+if [ -n "$chrome_version" ]; then
+    if [ -d "./chrome/$chrome_version" ]; then
+        chrome_path="PATH=./chrome/$chrome_version:\$PATH"
+    fi
+fi
+
+chrome_bin=${CHROME_BIN:-""}
+if [ -n "$chrome_bin" ]; then
+    chrome_bin="$(realpath $chrome_bin)"
+    chrome_path="PATH=$(dirname $chrome_bin):\$PATH"
+fi
+
+command="$chrome_path $python_bin $odoo_bin"
+
+if [ -f .odoorc ]; then
+    command="$command --config=.odoorc"
+fi
+
+command="$command $*"
+
+echo "Running command: $command"
+eval "$command"
+

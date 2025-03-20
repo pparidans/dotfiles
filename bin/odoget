@@ -1,0 +1,42 @@
+#!/bin/bash
+
+set -euo pipefail
+
+if [[ $# -eq 0 ]]; then
+    echo "At least 1 argument is required: odoget DB_URL" >&2
+    exit 1
+fi
+
+DB_URL=$1
+
+echo "Restoring from $DB_URL"
+zipname=$(basename "$DB_URL")
+dbname=${zipname%.*}
+tmp_restore_path="/tmp/restore-$dbname"
+if [ -d "$tmp_restore_path" ]; then
+    rm -r "$tmp_restore_path"
+fi
+mkdir -p "$tmp_restore_path"
+
+echo "Downloading..."
+curl "$DB_URL" --output-dir "$tmp_restore_path" --create-dirs --remote-name
+unzip "$tmp_restore_path/$zipname" -d "$tmp_restore_path"
+
+echo "Restoring filestore..."
+filestore_path="$HOME/.local/share/Odoo/filestore/$dbname"
+if [ -d "$filestore_path" ]; then
+    rm -r "$filestore_path"
+fi
+mkdir -p "$filestore_path"
+mv "$tmp_restore_path"/filestore/* "$filestore_path"
+
+echo "Restoring database..."
+dropdb "$dbname" --if-exists
+createdb "$dbname"
+psql -q "$dbname" < "$tmp_restore_path/dump.sql"
+
+echo "Cleaning up..."
+rm -r "$tmp_restore_path"
+
+echo "Created db in $dbname"
+
