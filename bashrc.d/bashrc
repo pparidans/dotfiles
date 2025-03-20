@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Increase bitory fize
+HISTSIZE=100000
+HISTFILESIZE=100000
+
+# Append to the history file, don't overwrite it
+shopt -s histappend
+
+# Set default text-editor
+export EDITOR=nvim
+
+# Automatically change directory
+shopt -s autocd

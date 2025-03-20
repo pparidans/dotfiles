@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# PastBoard aliases
+if [[ -n  "$WAYLAND_DISPLAY" ]]; then
+    alias pbcopy="wl-copy"
+    alias pbpaste="wl-paste"
+else
+    alias pbcopy="xclip -in"
+    alias pbpaste="xclip -out"
+fi

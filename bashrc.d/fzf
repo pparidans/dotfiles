@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Enable FZF integration
+if [ -f /usr/share/doc/fzf/examples/key-bindings.bash ]; then
+    . /usr/share/doc/fzf/examples/key-bindings.bash
+fi

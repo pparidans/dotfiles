@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+# Powerline prompt
+if [ -f /usr/share/powerline/integrations/powerline.sh ]; then
+    . /usr/share/powerline/integrations/powerline.sh
+fi

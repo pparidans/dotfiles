@@ -1,0 +1,6 @@
+#!/usr/env/bash
+
+nix_profile="$HOME/.nix-profile"
+if [ -d $nix_profile ]; then
+    export PATH="$nix_profile/bin:$PATH"
+fi
