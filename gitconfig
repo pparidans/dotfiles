@@ -5,6 +5,7 @@
     br = branch -v
     br-gone = ! LANG=C git branch -vv | awk '/: gone]/{print $1}'
     co = checkout
+    lo = log --abbrev-commit --graph --decorate --pretty=oneline
     fa = fetch --all --prune
     st = status --untracked-files
     com = commit -v
