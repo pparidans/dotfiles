@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+# First load the default .bashrc if exists
+if [ -f /etc/skel/.bashrc ]; then
+    . /etc/skel/.bashrc
+fi
+
 # Recursively search for this script's path (handling symbolic links...)
 source=${BASH_SOURCE[0]}
 while [ -L "$source" ]; do # resolve $source until the file is no longer a symlink

@@ -25,7 +25,7 @@ ln -sr gitconfig ~/.gitconfig
 
 From the dotfiles directory:
 ```sh
-ln -sr .bash_aliases ~/
+ln -sr bashrc ~/.bashrc
 ```
 
 ### Install Fish
