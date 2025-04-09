@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+if [[ "$(type -t __git_ps1)" = "function" ]]; then 
+    export GIT_PS1_SHOWDIRTYSTATE=true      # staged '+', unstaged '*'
+    export GIT_PS1_SHOWUNTRACKEDFILES=true  # '%' untracked files
+    export GIT_PS1_SHOWUPSTREAM="auto"      # '<' behind, '>' ahead, '<>' diverged, '=' no difference
+    export GIT_PS1_SHOWSTASHSTATE=true      # '$' something is stashed
+    export GIT_PS1_SHOWCONFLICTSTATE=true   # include "|CONFLICT" 
+    export GIT_PS1_HIDE_IF_PWD_IGNORED=true # do nothing with directory ignored by git
+    export GIT_PS1_DESCRIBE_STYLE=branch    # detached head '(master~4)'
+    export GIT_PS1_SHOWCOLORHINTS=true      # colored hint about dirty state
+    
+    PROMPT_COMMAND=$(sed -r 's|^(.+)(\\\$\s*)$|__git_ps1 "\1" "\2"|' <<< $PS1)
+fi
+
