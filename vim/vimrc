@@ -1,0 +1,47 @@
+" Use Vim defaults instead of 100% vi compatibility
+set nocompatible	
+" more powerful backspacing
+set backspace=indent,eol,start	
+
+" keep 50 lines of command line history
+set history=1000
+" show the cursor position all the time
+set ruler		
+
+" Load indentation rules and plugins according to the detected filetype.
+filetype plugin indent on
+" Enable syntax highlighting
+syntax on
+
+" Controls maximum quantity of past history. May be zero to suppress history.
+let g:netrw_dirhistmax=0
+
+" Don't make a backup before overwriting a file
+"set nobackup
+"set nowritebackup
+
+" Show (partial) command in status line.
+set showcmd		
+" Show matching brackets.
+set showmatch		
+" Do case insensitive matching
+set ignorecase		
+" Do smart case matching
+set smartcase		
+" Incremental search
+set incsearch		
+" Automatically save before commands like :next and :make
+set autowrite		
+" Hide buffers when they are abandoned
+set hidden		
+" Enable mouse usage (all modes)
+set mouse=a		
+" Enable wildmenu
+set wildmenu
+" Enable 2 lines statusbar
+set laststatus=2
+
+" Load matchit.vim
+if !exists('g:loaded_matchit')
+  runtime! macros/matchit.vim
+endif

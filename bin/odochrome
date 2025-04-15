@@ -3,7 +3,7 @@
 set -euo pipefail
 
 if [[ $# -eq 0 ]]; then
-    echo "At least 1 argument is required: odoget CHROME_VERSION" >&2
+    echo "At least 1 argument is required: odochrome CHROME_VERSION" >&2
     exit 1
 fi
 
@@ -21,7 +21,7 @@ if ! command -v npx &> /dev/null; then
 fi
 
 chromes_path="./chrome"
-chrome_install_cmd="npx @puppeteer/browsers install chrome@$CHROME_VERSION"
+chrome_install_cmd="npx -y @puppeteer/browsers install chrome@$CHROME_VERSION"
 IFS=" " read -r -a chrome_install_out <<< "$($chrome_install_cmd)"
 chrome_installed_version=${chrome_install_out[0]}
 chrome_installed_path=${chrome_install_out[1]}
