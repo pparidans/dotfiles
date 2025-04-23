@@ -1,2 +1,4 @@
 # Ignore NeoVim ShaDa ("shared data") file
 *.shada
+# Ignore (Neo)Vim Swap file
+*.swp
