@@ -23,8 +23,8 @@ fi
 
 chrome_bin=${CHROME_BIN:-""}
 if [ -n "$chrome_bin" ]; then
-    chrome_bin="$(realpath $chrome_bin)"
-    chrome_path="PATH=$(dirname $chrome_bin):\$PATH"
+    chrome_bin="$(realpath "$chrome_bin")"
+    chrome_path="PATH=$(dirname "$chrome_bin"):\$PATH"
 fi
 
 command="$chrome_path $python_bin $odoo_bin"
