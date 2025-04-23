@@ -17,6 +17,7 @@
     ui = auto
 [rebase]
     instructionFormat = (%an) %s
+    autostash = true
 [commit]
     verbose = true
 [pull]
