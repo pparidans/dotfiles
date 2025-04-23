@@ -11,7 +11,7 @@ DB_URL=$1
 
 echo "Restoring from $DB_URL"
 zipname=$(basename "$DB_URL")
-dbname=${zipname%.*}
+dbname="odoodb-${zipname%.*}"
 tmp_restore_path="/tmp/restore-$dbname"
 if [ -d "$tmp_restore_path" ]; then
     rm -r "$tmp_restore_path"
