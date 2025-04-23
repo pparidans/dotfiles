@@ -30,6 +30,8 @@ set ignorecase
 set smartcase		
 " Incremental search
 set incsearch		
+" Highlight search
+set hlsearch
 " Automatically save before commands like :next and :make
 set autowrite		
 " Hide buffers when they are abandoned
@@ -40,6 +42,9 @@ set mouse=a
 set wildmenu
 " Enable 2 lines statusbar
 set laststatus=2
+
+set expandtab
+set shiftwidth=4 tabstop=4
 
 " Load matchit.vim
 if !exists('g:loaded_matchit')
