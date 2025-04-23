@@ -1,1 +1,2 @@
-vendor/*.old
+# Ignore NeoVim ShaDa ("shared data") file
+*.shada
