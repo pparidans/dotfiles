@@ -1,3 +1,6 @@
 [submodule "local/share/nvim/site/pack/plug/start/fzf-lua"]
 	path = local/share/nvim/site/pack/plug/start/fzf-lua
 	url = https://github.com/ibhagwan/fzf-lua
+[submodule "local/share/nvim/site/pack/plug/start/vim-commentary"]
+	path = local/share/nvim/site/pack/plug/start/vim-commentary
+	url = https://github.com/tpope/vim-commentary
