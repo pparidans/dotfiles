@@ -1,0 +1,31 @@
+[user]
+    name = Pierre Paridans
+    email = pierre@paridans.org
+[alias]
+    br = branch --verbose
+    co = checkout
+    ll = log --abbrev-commit --graph --decorate --pretty=oneline
+    cur = branch --show-current
+    di = diff --ignore-all-space
+    dic = diff --ignore-all-space --cached
+    cp = cherry-pick
+    puf = push --force-with-lease
+    branch-gone = ! LANG=C git branch --verbose --verbose | awk '/: gone]/{print $1}'
+[core]
+    editor = nvim
+[color]
+    ui = auto
+[rebase]
+    instructionFormat = (%an) %s
+[commit]
+    verbose = true
+[pull]
+    ff = only
+[status]
+    showUntrackedFiles = all
+[blame]
+    coloring = repeatedLines
+[fetch]
+    prune = true
+    pruneTags = true
+    all = true

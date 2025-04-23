@@ -18,7 +18,7 @@ sudo apt install -y fonts-recommended fonts-powerline
 
 From the dotfiles directory:
 ```sh
-ln -sr gitconfig ~/.gitconfig
+ln -sr config/git ~/.config/
 ```
 
 ### Configure Bash
