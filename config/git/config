@@ -9,6 +9,7 @@
     di = diff --ignore-all-space
     dic = diff --ignore-all-space --cached
     cp = cherry-pick
+    fa = fetch --all
     puf = push --force-with-lease
     branch-gone = ! LANG=C git branch --verbose --verbose | awk '/: gone]/{print $1}'
 [core]
