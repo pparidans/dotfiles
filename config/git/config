@@ -12,15 +12,30 @@
     fa = fetch --all
     puf = push --force-with-lease
     branch-gone = ! LANG=C git branch --verbose --verbose | awk '/: gone]/{print $1}'
+[column]
+    ui = auto
 [core]
     editor = nvim
 [color]
     ui = auto
+[branch]
+    sort = -committerdate
+[tag]
+    sort = version:refname
+[diff]
+    algorithm = histogram
+    colorMoved = plain
+    mnemonicPrefix = true
+    renames = true
 [rebase]
     instructionFormat = (%an) %s
     autostash = true
 [commit]
     verbose = true
+[push]
+    default = simple
+    autoSetupRemote = true
+    followTags = true
 [pull]
     ff = only
 [status]
