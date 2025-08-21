@@ -14,7 +14,7 @@ if [ -d .venv ]; then
 fi
 
 chrome_path=""
-chrome_version=${CHROME:-""}
+chrome_version=${CHROME:-"current"}
 if [ -n "$chrome_version" ]; then
     if [ -d "./chrome/$chrome_version" ]; then
         chrome_path="PATH=./chrome/$chrome_version:\$PATH"
