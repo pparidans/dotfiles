@@ -11,7 +11,7 @@ CHROME_VERSION=$1
 
 odoo_bin="./odoo/odoo-bin"
 if [ ! -f $odoo_bin ]; then
-    echo "No 'odoo-bin' found at [$odoo_bin]" >&2
+    echo "No 'odoo-bin' found at [$odoo_bin]. You aren't at the root of the Odoo project" >&2
     exit 1
 fi
 
