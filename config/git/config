@@ -16,7 +16,7 @@
 [column]
     ui = auto
 [core]
-    editor = nvim
+    editor = vim
 [color]
     ui = auto
 [branch]

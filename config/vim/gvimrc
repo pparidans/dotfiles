@@ -1,0 +1,2 @@
+" Removes the Toolbar
+set guioptions-=T

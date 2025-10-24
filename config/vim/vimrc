@@ -43,8 +43,20 @@ set wildmenu
 " Enable 2 lines statusbar
 set laststatus=2
 
+" Enable line numbers
+set number
+" Number of spaces a tab represents
+set tabstop=4
+" Number of spaces for each indentation
+set shiftwidth=4
+" Convert tabs to spaces
 set expandtab
-set shiftwidth=4 tabstop=4
+" Automatically indent new lines
+set smartindent
+" Highlight the current line
+set cursorline
+" Enable 24-bit RGB colors
+set termguicolors
 
 " Load matchit.vim
 if !exists('g:loaded_matchit')
