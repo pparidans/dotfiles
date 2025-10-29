@@ -10,3 +10,6 @@
 [submodule "config/vim/pack/user/start/catpuccin"]
 	path = config/vim/pack/user/start/catpuccin
 	url = https://github.com/catppuccin/vim.git
+[submodule "config/vim/pack/user/start/lightline"]
+	path = config/vim/pack/user/start/lightline
+	url = https://github.com/itchyny/lightline.vim
