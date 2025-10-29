@@ -7,3 +7,6 @@
 [submodule "config/vim/pack/user/start/fzf.vim"]
 	path = config/vim/pack/user/start/fzf.vim
 	url = https://github.com/junegunn/fzf.vim
+[submodule "config/vim/pack/user/start/catpuccin"]
+	path = config/vim/pack/user/start/catpuccin
+	url = https://github.com/catppuccin/vim.git

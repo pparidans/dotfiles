@@ -58,6 +58,13 @@ set cursorline
 " Enable 24-bit RGB colors
 set termguicolors
 
+" Set colorscheme
+if &background == 'dark'
+    silent! colorscheme catppuccin_mocha
+else
+    silent! colorscheme catppuccin_latte
+endif
+
 " Load matchit.vim
 if !exists('g:loaded_matchit')
   runtime! macros/matchit.vim
