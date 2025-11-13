@@ -2,6 +2,6 @@
 db_name=odoodb
 workers=0
 max_cron_threads=0
-dev_mode=xml,reload
+dev_mode=xml,qweb,access
 addons_path=odoo/addons,enterprise
 with_demo=True
